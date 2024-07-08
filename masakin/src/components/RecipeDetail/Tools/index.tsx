@@ -74,7 +74,7 @@ export default function Tools({ recipeDetailData }: ToolsProps) {
             key={index}
             className="my-1 flex w-full justify-between items-center text-sm bg-stone-200 rounded-lg font-semibold py-2 px-3"
           >
-            <p className="w-full text-center">{tool}</p>
+            <p className="w-full">{tool}</p>
           </li>
         ))}
       </ul>

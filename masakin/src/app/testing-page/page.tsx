@@ -1,4 +1,4 @@
-import Modal from "@/components/Modal";
+"use client";
 
 export default function TestingPage() {
   return <></>;

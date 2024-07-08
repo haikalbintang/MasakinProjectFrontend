@@ -7,12 +7,20 @@ import Ingredients from "@/components/RecipeDetail/Ingredients";
 import { useState } from "react";
 import Tools from "@/components/RecipeDetail/Tools";
 import Instructions from "@/components/RecipeDetail/Instructions";
+import Reload from "@/components/PopUpScreen/Reload";
 
 export default function RecipeDetail() {
   const [selectedMenu, setSelectedMenu] = useState("Ingredients");
-  console.log("food1", food1);
+
+  const menuGreens = [
+    { menu: "Ingredients", text: "Bahan-bahan" },
+    { menu: "Tools", text: "Alat-alat" },
+    { menu: "Instructions", text: "Cara masak" },
+  ];
+
   return (
     <div className="px-9 flex flex-col justify-center items-center">
+      <Reload />
       <h1 className="text-xl py-3">{recipeDetailData.title}</h1>
       <div className="w-full h-36 relative rounded-xl">
         <Image
@@ -124,42 +132,20 @@ export default function RecipeDetail() {
         </button>
       </div>
       <div className="w-full flex gap-1">
-        <div className="w-1/3">
-          <button
-            onClick={() => setSelectedMenu("Ingredients")}
-            className={`${
-              selectedMenu === "Ingredients"
-                ? "bg-lime-600 text-white"
-                : "text-lime-600"
-            } w-full py-2 my-2 rounded-xl text-xs`}
-          >
-            Bahan-bahan
-          </button>
-        </div>
-        <div className="w-1/3">
-          <button
-            onClick={() => setSelectedMenu("Tools")}
-            className={`${
-              selectedMenu === "Tools"
-                ? "bg-lime-600 text-white"
-                : "text-lime-600"
-            } w-full py-2 my-2 rounded-xl text-xs`}
-          >
-            Alat-alat
-          </button>
-        </div>
-        <div className="w-1/3">
-          <button
-            onClick={() => setSelectedMenu("Instructions")}
-            className={`${
-              selectedMenu === "Instructions"
-                ? "bg-lime-600 text-white"
-                : "text-lime-600"
-            } w-full py-2 my-2 rounded-xl text-xs`}
-          >
-            Cara masak
-          </button>
-        </div>
+        {menuGreens.map((menu) => (
+          <div key={menu.menu} className="w-1/3">
+            <button
+              onClick={() => setSelectedMenu(menu.menu)}
+              className={`${
+                selectedMenu === menu.menu
+                  ? "bg-lime-600 text-white"
+                  : "text-lime-600 font-semibold"
+              } w-full py-2 my-2 rounded-xl text-xs`}
+            >
+              {menu.text}
+            </button>
+          </div>
+        ))}
       </div>
       {selectedMenu === "Ingredients" ? (
         <Ingredients recipeDetailData={recipeDetailData} />
