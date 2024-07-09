@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Reload from "@/components/PopUpScreen/Reload";
 
 const inter = Inter({ subsets: ["latin"] });
 
