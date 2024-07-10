@@ -2,6 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  display: flex;
+  justify-content: center;
+  background-color: black;
+}
+
+main {
+  max-width: 393px;
+  min-height: 100vh;
+  background-color: white;
+}
+
 .text-green-400 {
   color: rgba(9, 118, 89, 1);
 }

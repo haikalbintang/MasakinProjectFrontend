@@ -1,56 +1,68 @@
 "use client"
 
 import { recipeDetailData } from "@/data/Detail";
+import { recipeDetailType } from "@/data/Type";
 import Image from "next/image";
 
-// interface recipeProps {
-//   recipeDetailData: recipeDetail;
-// }
+interface RecipeDetailProps {
+  recipe: recipeDetailType;
+}
 
-const SmallCard = () => {
+const SmallCard: React.FC<RecipeDetailProps> = ({ recipe }) => {
   return (
-    <div className="min-w-28 h-36 pt-2 rounded-xl bg-grey-100 flex flex-col items-center space-y-1.5">
+    <div className="min-w-[106px] h-[141px] pt-[8px] rounded-[10px] bg-grey-100 flex flex-col items-center space-y-[7px]">
       <Image
         width={100}
         height={100}
         style={{
-          width: '6rem',
-          height: '3.5rem',
+          width: '92px',
+          height: '56px',
           objectFit: 'cover',
-          borderRadius: '10px'
+          borderRadius: '10px',
         }}
-        src={recipeDetailData.image}
-        alt={recipeDetailData.title}
+        src={recipe.image}
+        alt={recipe.title}
       />
-      <p className="text-xs font-medium text-grey-600">{recipeDetailData.title}</p>
-      <div className="relative w-24 space-y-3 top-3">
+      <p className="text-[11px] font-[400] text-grey-600 text-center">{recipe.title}</p>
+      <div className="relative w-full px-[5px] space-y-[10px] top-2">
         <div className="flex flex-row justify-center">
-          {[...Array(recipeDetailData.rating)].map((_, index) => (
+          {[...Array(recipeDetailData[0].rating)].map((_, index) => (
             <Image
               key={index}
               src="/starGreen.svg"
               alt="Star rating"
-              width={8}
-              height={8}
+              width={10}
+              height={10}
+              style={{
+                width: '8px',
+                height: '8px'
+              }}
             />
           ))}
         </div>
-        <div className="flex flex-row space text-[0.5rem] w-full justify-between">
+        <div className="flex flex-row space w-full justify-between">
           <div className="flex flex-row space-x-0.5 items-center">
             <Image
               src="/timeGreen.svg"
               alt="Time:"
-              width={9}
-              height={9}
-              color="rgba(9, 118, 89, 1)"
+              width={10}
+              height={10}
+              style={{
+                width: '8px',
+                height: '8px'
+              }}
             />
-            <p className="text-green-400">{recipeDetailData.time} menit</p>
+            <p className="text-green-400 text-[8px]">{recipe.time} menit</p>
           </div>
           <Image
             src="/bookmark.svg"
             alt="Bookmark"
-            width={12}
-            height={12}
+            width={10}
+            height={10}
+            style={{
+              width: '13px',
+              height: '13px'
+            }}
           />
         </div>
       </div>

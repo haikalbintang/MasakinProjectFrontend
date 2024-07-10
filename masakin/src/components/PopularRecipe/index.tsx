@@ -1,18 +1,16 @@
-import BigCard from "@/components/RecipeCard/bigCard"
+import BigCard from "@/components/RecipeCard/bigCard";
+import { recipeDetailData } from "@/data/Detail";
+import { recipeDetailType } from "@/data/Type";
+
 
 const PopularRecipe = () => {
   return (
-    <div className="mb-10 space-y-3.5">
-      <h2 className="text-base font-semibold text-black">Resep Populer</h2>
-      <div className="mr-8 flex justify-between flex-wrap overflow-y-scroll">
-        <BigCard></BigCard>
-        <BigCard></BigCard>
-        <BigCard></BigCard>
-        <BigCard></BigCard>
-        <BigCard></BigCard>
-        <BigCard></BigCard>
-        <BigCard></BigCard>
-        <BigCard></BigCard>
+    <div>
+      <h2 className="text-[16px] font-[600] text-black mb-[8px]">Resep Populer</h2>
+      <div className="flex flex-wrap overflow-y-scroll">
+        {recipeDetailData.map((recipe: recipeDetailType) => (
+          <BigCard key={recipe.id} recipe={recipe} />
+        ))}
       </div>
     </div>
   );
