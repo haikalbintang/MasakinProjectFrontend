@@ -42,7 +42,7 @@ const LoginPage = () => {
 
   return (
     <>
-      <div className="flex flex-col items-center w-full mt-[97px] ml-[]">
+      <div className="flex flex-col mt-[97px] ml-[56px]">
         <div className="">
           <h1 className="text-[33px] font-[700]">Welcome,</h1>
           <h6 className="text-[19px] font-[500]">Are you ready to cook?</h6>
@@ -84,7 +84,7 @@ const LoginPage = () => {
           </div>
         </form>
 
-        <div className="flex gap-4">
+        <div className="flex justify-center items-center gap-6 mt-[20px] mb-[20px]">
           <SocialIcon src="/assets/icons/google.png" alt="Google icon" />
           <SocialIcon src="/assets/icons/facebook.png" alt="Facebook icon" />
         </div>
