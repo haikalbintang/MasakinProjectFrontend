@@ -1,8 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import food1 from "@/assets/food1_Bulgogi.jpeg";
-import { recipeDetailData } from "@/data/RecipeDetail";
+import { recipeDetailData } from "@/data/Detail";
 import Ingredients from "@/components/RecipeDetail/Ingredients";
 import { useState } from "react";
 import Tools from "@/components/RecipeDetail/Tools";
@@ -21,19 +20,19 @@ export default function RecipeDetail() {
   return (
     <div className="px-9 flex flex-col justify-center items-center">
       <Reload />
-      <h1 className="text-xl py-3">{recipeDetailData.title}</h1>
+      <h1 className="text-xl py-3">{recipeDetailData[0].title}</h1>
       <div className="w-full h-36 relative rounded-xl">
         <Image
           className="rounded-xl"
-          src={food1.src}
-          alt={recipeDetailData.title}
+          src={recipeDetailData[0].image}
+          alt={recipeDetailData[0].title}
           layout="fill"
           objectFit="cover"
         />
       </div>
       <div className="flex justify-between items-center w-full py-3">
         <div className="flex">
-          {[...Array(recipeDetailData.rating)].map((_, index) => (
+          {[...Array(recipeDetailData[0].rating)].map((_, index) => (
             <svg
               key={index}
               width="15"
@@ -70,10 +69,10 @@ export default function RecipeDetail() {
               fill="#A9A9A9"
             />
           </svg>
-          <p className="text-slate-400">{recipeDetailData.time} menit</p>
+          <p className="text-slate-400">{recipeDetailData[0].time} menit</p>
         </div>
         <div className="flex gap-1">
-          {[...Array(recipeDetailData.difficulty)].map((_, index) => (
+          {[...Array(recipeDetailData[0].difficulty)].map((_, index) => (
             <svg
               key={index}
               width="19"
@@ -120,7 +119,7 @@ export default function RecipeDetail() {
         </svg>
       </div>
       <div className="text-sm font-medium flex flex-col pt-2 pb-6 gap-3">
-        {recipeDetailData.description.map((desc, index) => (
+        {recipeDetailData[0].description.map((desc, index) => (
           <p key={index} className="text-justify leading-tight">
             {desc}
           </p>
@@ -148,13 +147,13 @@ export default function RecipeDetail() {
         ))}
       </div>
       {selectedMenu === "Ingredients" ? (
-        <Ingredients recipeDetailData={recipeDetailData} />
+        <Ingredients recipeDetailData={recipeDetailData[0]} />
       ) : null}
       {selectedMenu === "Tools" ? (
-        <Tools recipeDetailData={recipeDetailData} />
+        <Tools recipeDetailData={recipeDetailData[0]} />
       ) : null}
       {selectedMenu === "Instructions" ? (
-        <Instructions recipeDetailData={recipeDetailData} />
+        <Instructions recipeDetailData={recipeDetailData[0]} />
       ) : null}
     </div>
   );

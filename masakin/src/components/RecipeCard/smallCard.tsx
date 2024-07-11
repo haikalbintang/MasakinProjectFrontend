@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { recipeDetailData } from "@/data/Detail";
 import { recipeDetailType } from "@/data/Type";
@@ -15,15 +15,17 @@ const SmallCard: React.FC<RecipeDetailProps> = ({ recipe }) => {
         width={100}
         height={100}
         style={{
-          width: '92px',
-          height: '56px',
-          objectFit: 'cover',
-          borderRadius: '10px',
+          width: "92px",
+          height: "56px",
+          objectFit: "cover",
+          borderRadius: "10px",
         }}
         src={recipe.image}
         alt={recipe.title}
       />
-      <p className="text-[11px] font-[400] text-grey-600 text-center">{recipe.title}</p>
+      <p className="text-[11px] font-[400] text-grey-600 text-center">
+        {recipe.title}
+      </p>
       <div className="relative w-full px-[5px] space-y-[10px] top-2">
         <div className="flex flex-row justify-center">
           {[...Array(recipeDetailData[0].rating)].map((_, index) => (
@@ -34,8 +36,8 @@ const SmallCard: React.FC<RecipeDetailProps> = ({ recipe }) => {
               width={10}
               height={10}
               style={{
-                width: '8px',
-                height: '8px'
+                width: "8px",
+                height: "8px",
               }}
             />
           ))}
@@ -48,8 +50,8 @@ const SmallCard: React.FC<RecipeDetailProps> = ({ recipe }) => {
               width={10}
               height={10}
               style={{
-                width: '8px',
-                height: '8px'
+                width: "8px",
+                height: "8px",
               }}
             />
             <p className="text-green-400 text-[8px]">{recipe.time} menit</p>
@@ -60,14 +62,14 @@ const SmallCard: React.FC<RecipeDetailProps> = ({ recipe }) => {
             width={10}
             height={10}
             style={{
-              width: '13px',
-              height: '13px'
+              width: "13px",
+              height: "13px",
             }}
           />
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default SmallCard
+export default SmallCard;

@@ -1,7 +1,7 @@
-import { recipeDetail } from "@/types/RecipeDetail";
+import { recipeDetailType } from "@/data/Type";
 
 interface IngredientsProps {
-  recipeDetailData: recipeDetail;
+  recipeDetailData: recipeDetailType;
 }
 
 export default function Ingredients({ recipeDetailData }: IngredientsProps) {

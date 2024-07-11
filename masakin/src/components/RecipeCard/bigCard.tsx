@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { recipeDetailType } from "@/data/Type";
 import Image from "next/image";
@@ -9,10 +9,12 @@ interface RecipeDetailProps {
 
 const BigCard: React.FC<RecipeDetailProps> = ({ recipe }) => {
   return (
-    <div className="relative w-[170px] h-[167px] mb-1.5 mr-[2px] mr7 rounded-[10px] overflow-hidden bg-neutral-500 bg-cover bg-center flex flex-col"
+    <div
+      className="relative w-[170px] h-[167px] mb-1.5 mr-[2px] mr7 rounded-[10px] overflow-hidden bg-neutral-500 bg-cover bg-center flex flex-col"
       style={{
-        backgroundImage: `url(${recipe.image})`
-      }}>
+        backgroundImage: `url(${recipe.image})`,
+      }}
+    >
       <div className="absolute w-full h-[128px] top-[39px] bg-gradient-to-b from-black/0 to-black/100 z-0"></div>
       <div className="relative mx-[16px] top-[103px]">
         <p className="text-[14px] font-[600] text-white">{recipe.title}</p>
@@ -25,8 +27,8 @@ const BigCard: React.FC<RecipeDetailProps> = ({ recipe }) => {
               width={10}
               height={10}
               style={{
-                width: '12px',
-                height: '11.16px'
+                width: "12px",
+                height: "11.16px",
               }}
             />
           ))}
@@ -39,11 +41,13 @@ const BigCard: React.FC<RecipeDetailProps> = ({ recipe }) => {
               width={10}
               height={10}
               style={{
-                width: '15px',
-                height: '15px'
+                width: "15px",
+                height: "15px",
               }}
             />
-            <p className="text-neutral-400 text-[11px] font-[400]">{recipe.time} menit</p>
+            <p className="text-neutral-400 text-[11px] font-[400]">
+              {recipe.time} menit
+            </p>
           </div>
           <Image
             src="/bookmark.svg"
@@ -51,14 +55,14 @@ const BigCard: React.FC<RecipeDetailProps> = ({ recipe }) => {
             width={10}
             height={10}
             style={{
-              width: '17px',
-              height: '17px'
+              width: "17px",
+              height: "17px",
             }}
           />
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default BigCard
+export default BigCard;

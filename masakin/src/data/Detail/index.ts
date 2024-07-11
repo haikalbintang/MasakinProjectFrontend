@@ -1,11 +1,10 @@
-import { recipeDetailType } from "../Type";
+import { recipeDetailType } from "@/data/Type";
 
 export const recipeDetailData: recipeDetailType[] = [
   {
     id: 1,
     title: "Bulgogi",
-    image:
-      "/food_Bulgogi.jpg",
+    image: "/food_Bulgogi.jpg",
     rating: 5,
     time: 50,
     difficulty: 3,
@@ -32,16 +31,11 @@ export const recipeDetailData: recipeDetailType[] = [
   {
     id: 2,
     title: "Soto Ayam Lamongan",
-    image:
-      "/food_SotoAyamLamongan.svg",
+    image: "/food_SotoAyamLamongan.svg",
     rating: 5,
     time: 30,
     difficulty: 4,
-    description: [
-      "???",
-      "???",
-      "???",
-    ],
+    description: ["???", "???", "???"],
     servings: 4,
     ingredients: [
       { number: "???", name: "???" },
@@ -60,16 +54,11 @@ export const recipeDetailData: recipeDetailType[] = [
   {
     id: 3,
     title: "Jajangmyeon",
-    image:
-      "/food_Jajangmyeon.svg",
+    image: "/food_Jajangmyeon.svg",
     rating: 5,
     time: 30,
     difficulty: 4,
-    description: [
-      "???",
-      "???",
-      "???",
-    ],
+    description: ["???", "???", "???"],
     servings: 4,
     ingredients: [
       { number: "???", name: "???" },
@@ -88,16 +77,11 @@ export const recipeDetailData: recipeDetailType[] = [
   {
     id: 4,
     title: "Kimbab",
-    image:
-      "/food_Kimbab.svg",
+    image: "/food_Kimbab.svg",
     rating: 5,
     time: 30,
     difficulty: 4,
-    description: [
-      "???",
-      "???",
-      "???",
-    ],
+    description: ["???", "???", "???"],
     servings: 4,
     ingredients: [
       { number: "???", name: "???" },
@@ -116,16 +100,11 @@ export const recipeDetailData: recipeDetailType[] = [
   {
     id: 5,
     title: "Nasi Ayam Hainan",
-    image:
-      "/food_NasiAyamHainan.svg",
+    image: "/food_NasiAyamHainan.svg",
     rating: 5,
     time: 30,
     difficulty: 4,
-    description: [
-      "???",
-      "???",
-      "???",
-    ],
+    description: ["???", "???", "???"],
     servings: 4,
     ingredients: [
       { number: "???", name: "???" },
@@ -144,16 +123,11 @@ export const recipeDetailData: recipeDetailType[] = [
   {
     id: 6,
     title: "Bibimbab",
-    image:
-      "/food_Bibimbab.svg",
+    image: "/food_Bibimbab.svg",
     rating: 5,
     time: 30,
     difficulty: 4,
-    description: [
-      "???",
-      "???",
-      "???",
-    ],
+    description: ["???", "???", "???"],
     servings: 4,
     ingredients: [
       { number: "???", name: "???" },
@@ -172,16 +146,11 @@ export const recipeDetailData: recipeDetailType[] = [
   {
     id: 7,
     title: "Tangsuyuk",
-    image:
-      "/food_Tangsuyuk.svg",
+    image: "/food_Tangsuyuk.svg",
     rating: 5,
     time: 30,
     difficulty: 4,
-    description: [
-      "???",
-      "???",
-      "???",
-    ],
+    description: ["???", "???", "???"],
     servings: 4,
     ingredients: [
       { number: "???", name: "???" },
