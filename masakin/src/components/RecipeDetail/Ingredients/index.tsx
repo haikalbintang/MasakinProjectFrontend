@@ -8,7 +8,7 @@ export default function Ingredients({ recipeDetailData }: IngredientsProps) {
   return (
     <>
       <div className="flex w-full justify-between items-center mt-6 mb-4">
-        <div className="flex gap-1">
+        <div className="w-1/3 flex gap-1">
           <svg
             width="17"
             height="18"
@@ -59,12 +59,14 @@ export default function Ingredients({ recipeDetailData }: IngredientsProps) {
               </clipPath>
             </defs>
           </svg>
-          <p className="text-slate-400 text-sm">
+          <p className="bg-red-700 text-slate-400 text-sm">
             {recipeDetailData.servings} Porsi
           </p>
         </div>
-        <p className="text-sm font-semibold">Masakan</p>
-        <p className="text-xs text-slate-400">
+        <p className="w-1/3 text-center bg-red-700 text-sm font-semibold">
+          Masakan
+        </p>
+        <p className="w-1/3 text-right bg-red-700 text-xs text-slate-400">
           {recipeDetailData.ingredients.length} bahan
         </p>
       </div>
