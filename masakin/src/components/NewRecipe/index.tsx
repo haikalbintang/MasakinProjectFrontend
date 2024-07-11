@@ -4,11 +4,11 @@ import { recipeDetailType } from "@/data/Type";
 
 const NewRecipe = () => {
   return (
-    <div className="mb-[52px]">
+    <div className="w-full mb-[52px] pl-[32px]">
       <h2 className="text-[16px] font-[600] text-black mb-[15px]">
         Resep Baru
       </h2>
-      <div className="flex flex-row space-x-[7px] overflow-x-scroll">
+      <div className="flex w-auto flex-row space-x-[7px] overflow-x-auto">
         {recipeDetailData.map((recipe: recipeDetailType) => (
           <SmallCard key={recipe.id} recipe={recipe} />
         ))}

@@ -2,14 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-/* body {
+body {
   display: flex;
   justify-content: center;
   background-color: black;
-} */
+}
 
 main {
-  max-width: 393px;
+  width: 393px;
+  min-width: 320px;
   min-height: 100vh;
   background-color: white;
 }
@@ -28,4 +29,9 @@ main {
 
 .bg-red {
   background-color: rgba(223, 27, 79, 1);
+}
+
+.searchInput {
+  background: url("/masakin/public/icon_search.png") no-repeat left center;
+  background-position: 10px 10px;
 }
