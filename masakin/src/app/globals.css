@@ -2,11 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
+/* body {
   display: flex;
   justify-content: center;
   background-color: black;
-}
+} */
 
 main {
   max-width: 393px;
@@ -24,4 +24,8 @@ main {
 
 .bg-grey-100 {
   background-color: rgba(223, 226, 219, 1);
+}
+
+.bg-red {
+  background-color: rgba(223, 27, 79, 1);
 }
