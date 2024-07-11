@@ -1,10 +1,14 @@
+import PopularRecipe from "@/components/PopularRecipe";
+import NewRecipe from "@/components/NewRecipe";
 import Search from "@/components/Search";
 
 export default function homePage() {
   return (
     <>
-      <main className="flex flex-col items-center">
+      <main className="flex flex-col pl-[32px] pt-[65px] items-center">
         <Search></Search>
+        <NewRecipe></NewRecipe>
+        <PopularRecipe></PopularRecipe>
       </main>
     </>
   );
