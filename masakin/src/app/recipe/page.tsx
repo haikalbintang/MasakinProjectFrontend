@@ -136,8 +136,8 @@ export default function RecipeDetail() {
             <button
               onClick={() => setSelectedMenu(menu.menu)}
               className={`${selectedMenu === menu.menu
-                  ? "bg-lime-600 text-white"
-                  : "text-lime-600 font-semibold"
+                ? "bg-lime-600 text-white"
+                : "text-lime-600 font-semibold"
                 } w-full py-2 my-2 rounded-xl text-xs`}
             >
               {menu.text}
