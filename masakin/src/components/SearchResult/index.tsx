@@ -1,8 +1,5 @@
 "use client"
 import { recipeDetailData } from "@/data/Detail";
-import { useRouter } from "next/router";
-import SearchBar from "../SearchBar";
-import { useState } from "react";
 import { recipeDetailType } from "@/data/Type";
 import BigCard from "@/components/RecipeCard/bigCard";
 

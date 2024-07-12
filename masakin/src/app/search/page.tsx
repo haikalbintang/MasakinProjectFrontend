@@ -1,5 +1,3 @@
-import PopularRecipe from "@/components/PopularRecipe";
-import NewRecipe from "@/components/NewRecipe";
 import SearchBar from "@/components/SearchBar";
 import SearchResult from "@/components/SearchResult";
 
