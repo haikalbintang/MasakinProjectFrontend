@@ -9,7 +9,7 @@ body {
 }
 
 main {
-  width: 393px;
+  width: 392px;
   min-width: 320px;
   min-height: 100vh;
   background-color: white;
@@ -27,11 +27,10 @@ main {
   background-color: rgba(223, 226, 219, 1);
 }
 
-.bg-red {
-  background-color: rgba(223, 27, 79, 1);
+.grey-100 {
+  color: rgba(223, 226, 219, 1);
 }
 
-.searchInput {
-  background: url("/masakin/public/icon_search.png") no-repeat left center;
-  background-position: 10px 10px;
+.bg-red {
+  background-color: rgba(223, 27, 79, 1);
 }
