@@ -1,6 +1,6 @@
 import PopularRecipe from "@/components/PopularRecipe";
 import NewRecipe from "@/components/NewRecipe";
-import Search from "@/components/Search";
+import Search from "@/components/SearchBar";
 
 export default function homePage() {
   return (
