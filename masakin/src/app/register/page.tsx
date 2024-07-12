@@ -10,7 +10,7 @@ import axios from "axios";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
-const Register = () => {
+const Register: React.FC = () => {
   const initialValues = {
     username: "",
     firstname: "",
@@ -41,10 +41,13 @@ const Register = () => {
 
   const handleSubmit = async (values: typeof initialValues) => {
     try {
-      const response = await axios.post("https://masakinprojectbe.vercel.app/user/register", values);
+      const response = await axios.post(
+        "https://masakinprojectbe.vercel.app/user/register",
+        values
+      );
 
       if (response.status === 200) {
-        router.push("/login")
+        router.push("/login");
       } else {
         setError(response.data.message || "Registration failed.");
       }
@@ -70,27 +73,63 @@ const Register = () => {
         validationSchema={validationSchema}
         onSubmit={handleSubmit}
       >
-        <Form className="flex flex-col justify-center items-center gap-6 mt-[50px]">
-          <div className="flex flex-col gap-6">
-            <InputForm label="Username" type="text" placeholder="Username" />
-            <InputForm
-              label="First Name"
-              type="text"
-              placeholder="First Name"
-            />
-            <InputForm label="Last Name" type="text" placeholder="Last Name" />
-            <InputForm label="Email" type="email" placeholder="Email" />
-            <InputForm
-              label="Password"
-              type="password"
-              placeholder="Password"
-            />
-          </div>
+        {(formik) => {
+          const { handleSubmit, errors, values, handleChange } = formik;
+          console.log("errors:", errors);
+          return (
+            <Form
+              onSubmit={handleSubmit}
+              className="flex flex-col justify-center items-center gap-6 mt-[50px]"
+            >
+              <div className="flex flex-col gap-6">
+                <InputForm
+                  label="Username"
+                  type="text"
+                  placeholder="Username"
+                  name="username"
+                  value={values.username}
+                  onChange={handleChange}
+                />
+                <InputForm
+                  label="First Name"
+                  type="text"
+                  placeholder="First Name"
+                  name="firstname"
+                  value={values.firstname}
+                  onChange={handleChange}
+                />
+                <InputForm
+                  label="Last Name"
+                  type="text"
+                  placeholder="Last Name"
+                  name={"lastname"}
+                  value={values.lastname}
+                  onChange={handleChange}
+                />
+                <InputForm
+                  label="Email"
+                  type="email"
+                  placeholder="Email"
+                  name="email"
+                  value={values.email}
+                  onChange={handleChange}
+                />
+                <InputForm
+                  label="Password"
+                  type="password"
+                  placeholder="Password"
+                  name="password"
+                  value={values.password}
+                  onChange={handleChange}
+                />
+              </div>
 
-          <div>
-            <FormButton text="Register" type="submit"/>
-          </div>
-        </Form>
+              <div>
+                <FormButton text="Register" type={"submit"} />
+              </div>
+            </Form>
+          );
+        }}
       </Formik>
 
       <div className="flex justify-center items-center gap-2 mt-[20px]">
