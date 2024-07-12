@@ -1,0 +1,25 @@
+"use client"
+import { recipeDetailData } from "@/data/Detail";
+import { useRouter } from "next/router";
+import SearchBar from "../SearchBar";
+import { useState } from "react";
+import { recipeDetailType } from "@/data/Type";
+import BigCard from "@/components/RecipeCard/bigCard";
+
+const SearchResult = () => {
+  let querystring = window.location.search.substring(7);
+
+  const searchResult = recipeDetailData.filter((recipe: recipeDetailType) =>
+    recipe.title.toLowerCase().includes(querystring.toLowerCase())
+  )
+
+  return (
+    <div className="pl-[32px] flex flex-wrap self-start">
+      {searchResult.map((recipe: recipeDetailType) => (
+        <BigCard key={recipe.id} recipe={recipe} />
+      ))}
+    </div>
+  )
+}
+
+export default SearchResult

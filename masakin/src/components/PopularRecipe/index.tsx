@@ -8,7 +8,7 @@ const PopularRecipe = () => {
       <h2 className="text-[16px] font-[600] text-black mb-[8px]">
         Resep Populer
       </h2>
-      <div className="flex flex-wrap overflow-y-auto">
+      <div className="flex flex-wrap">
         {recipeDetailData.map((recipe: recipeDetailType) => (
           <BigCard key={recipe.id} recipe={recipe} />
         ))}
