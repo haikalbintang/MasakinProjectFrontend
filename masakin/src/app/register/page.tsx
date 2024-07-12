@@ -1,11 +1,14 @@
 "use client";
 
+import { useState } from "react";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import InputForm from "@/components/InputForm";
 import FormButton from "@/components/FormButton";
 import RedTitleForm from "@/components/RedTitleForm";
+import axios from "axios";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const Register = () => {
   const initialValues = {
@@ -20,7 +23,9 @@ const Register = () => {
     username: Yup.string().required("Username is required"),
     firstname: Yup.string().required("First name is required"),
     lastname: Yup.string().required("Last name is required"),
-    email: Yup.string().email("Invalid email address"),
+    email: Yup.string()
+      .email("Invalid email address")
+      .required("Email is required"),
     password: Yup.string()
       .required("Password is required")
       .min(8, "Password must be at least 8 characters")
@@ -30,8 +35,23 @@ const Register = () => {
       ),
   });
 
-  const handleSubmit = () => {
-    console.log("Register");
+  const [error, setError] = useState<string | null>(null);
+
+  const router = useRouter();
+
+  const handleSubmit = async (values: typeof initialValues) => {
+    try {
+      const response = await axios.post("https://masakinprojectbe.vercel.app/user/register", values);
+
+      if (response.status === 200) {
+        router.push("/login")
+      } else {
+        setError(response.data.message || "Registration failed.");
+      }
+    } catch (error) {
+      console.error("Registration error:", error);
+      setError("An error occurred during registration.");
+    }
   };
 
   return (
@@ -68,7 +88,7 @@ const Register = () => {
           </div>
 
           <div>
-            <FormButton text="Register" type="submit" onClick={handleSubmit}/>
+            <FormButton text="Register" type="submit"/>
           </div>
         </Form>
       </Formik>
