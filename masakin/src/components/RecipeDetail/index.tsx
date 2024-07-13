@@ -1,4 +1,3 @@
-import { recipeDetailData } from "@/data/Detail";
 import Title from "@/components/RecipeDetail/Title";
 import FoodImage from "@/components/RecipeDetail/FoodImage";
 import Rating from "@/components/RecipeDetail/Rating";
@@ -8,21 +7,26 @@ import Bookmark from "@/components/RecipeDetail/Bookmark";
 import Descriptions from "@/components/RecipeDetail/Descriptions";
 import PinkButton from "@/components/RecipeDetail/PinkButton";
 import GreenButtonsMenus from "@/components/RecipeDetail/GreenButtonsMenus";
+import { recipeDetailType } from "@/data/Type";
 
-export default function RecipeDetail() {
+interface RecipeDetailProps {
+  recipeDetailData: recipeDetailType;
+}
+
+export default function RecipeDetail({ recipeDetailData }: RecipeDetailProps) {
   return (
     <div className="px-9 flex flex-col justify-center items-center">
-      <Title recipeDetailData={recipeDetailData[0]} />
-      <FoodImage recipeDetailData={recipeDetailData[0]} />
+      <Title recipeDetailData={recipeDetailData} />
+      <FoodImage recipeDetailData={recipeDetailData} />
       <div className="flex justify-between items-center w-full py-3">
-        <Rating recipeDetailData={recipeDetailData[0]} />
-        <CookingTime recipeDetailData={recipeDetailData[0]} />
-        <Difficulty recipeDetailData={recipeDetailData[0]} />
+        <Rating recipeDetailData={recipeDetailData} />
+        <CookingTime recipeDetailData={recipeDetailData} />
+        <Difficulty recipeDetailData={recipeDetailData} />
         <Bookmark />
       </div>
-      <Descriptions recipeDetailData={recipeDetailData[0]} />
+      <Descriptions recipeDetailData={recipeDetailData} />
       <PinkButton />
-      <GreenButtonsMenus recipeDetailData={recipeDetailData[0]} />
+      <GreenButtonsMenus recipeDetailData={recipeDetailData} />
     </div>
   );
 }
