@@ -15,18 +15,21 @@ interface RecipeDetailProps {
 
 export default function RecipeDetail({ recipeDetailData }: RecipeDetailProps) {
   return (
-    <div className="px-9 flex flex-col justify-center items-center">
-      <Title recipeDetailData={recipeDetailData} />
-      <FoodImage recipeDetailData={recipeDetailData} />
-      <div className="flex justify-between items-center w-full py-3">
-        <Rating recipeDetailData={recipeDetailData} />
-        <CookingTime recipeDetailData={recipeDetailData} />
-        <Difficulty recipeDetailData={recipeDetailData} />
-        <Bookmark />
+    <div className="relative px-[35px] pt-[41px] flex flex-col justify-center items-center">
+      <div className="w-full sticky top-0 z-40 bg-white">
+        <Title recipeDetailData={recipeDetailData} />
+        <FoodImage recipeDetailData={recipeDetailData} />
+        <div className="flex justify-between items-center w-full py-3">
+          <Rating recipeDetailData={recipeDetailData} />
+          <CookingTime recipeDetailData={recipeDetailData} />
+          <Difficulty recipeDetailData={recipeDetailData} />
+          <Bookmark />
+        </div>
       </div>
       <Descriptions recipeDetailData={recipeDetailData} />
       <PinkButton />
       <GreenButtonsMenus recipeDetailData={recipeDetailData} />
+      <div className="h-96"></div>
     </div>
   );
 }

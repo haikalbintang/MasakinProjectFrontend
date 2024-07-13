@@ -2,10 +2,10 @@
 
 import { useState } from "react";
 import { recipeDetailType } from "@/data/Type";
-import GreenButtons from "../GreenButtons";
-import Ingredients from "../Ingredients";
-import Tools from "../Tools";
-import Instructions from "../Instructions";
+import GreenButtons from "./GreenButtons";
+import Ingredients from "./Ingredients";
+import Tools from "./Tools";
+import Instructions from "./Instructions";
 
 interface GreenButtonsMenusProps {
   recipeDetailData: recipeDetailType;

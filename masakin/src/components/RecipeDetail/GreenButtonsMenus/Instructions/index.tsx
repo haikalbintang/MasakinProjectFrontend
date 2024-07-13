@@ -1,7 +1,7 @@
 import { recipeDetailType } from "@/data/Type";
-import Servings from "../components/Servings";
-import TextBlack from "../components/TextBlack";
-import Total from "../components/Total";
+import Servings from "../../components/Servings";
+import TextBlack from "../../components/TextBlack";
+import Total from "../../components/Total";
 import InstructionsList from "./InstructionsList";
 
 interface InstructionsProps {
@@ -14,7 +14,11 @@ export default function Instructions({ recipeDetailData }: InstructionsProps) {
       <div className="flex w-full justify-between items-center mt-6 mb-4">
         <Servings recipeDetailData={recipeDetailData} />
         <TextBlack text={"Cara Memasak"} />
-        <Total text={"Langkah"} recipeDetailData={recipeDetailData} />
+        <Total
+          menu={"instructions"}
+          text={"Langkah"}
+          recipeDetailData={recipeDetailData}
+        />
       </div>
       <InstructionsList recipeDetailData={recipeDetailData} />
     </>

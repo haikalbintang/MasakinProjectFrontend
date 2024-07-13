@@ -1,11 +1,9 @@
-import { recipeDetailType } from "@/data/Type"
+import { recipeDetailType } from "@/data/Type";
 
 interface TitleProps {
-    recipeDetailData: recipeDetailType
+  recipeDetailData: recipeDetailType;
 }
 
 export default function Title({ recipeDetailData }: TitleProps) {
-    return (
-        <h1 className="text-xl py-3">{recipeDetailData.title}</h1>
-    )
+  return <h1 className="text-xl text-center py-3">{recipeDetailData.title}</h1>;
 }
