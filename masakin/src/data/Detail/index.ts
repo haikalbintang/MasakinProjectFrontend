@@ -21,10 +21,13 @@ export const recipeDetailData: recipeDetailType[] = [
     ],
     tools: ["mangkuk besar", "pisau dapur", "parutan"],
     instructions: [
-      { text: "Kumpulkan semua bahan.", image: "" },
+      {
+        text: "Kumpulkan semua bahan.",
+        image: "/recipe-detail/bulgogi/steps/1.svg",
+      },
       {
         text: "Cincang halus 8 siung bawang putih, Siapkan 60 ml Korean soy sauce, 30 ml minyak wijen panggang, 3 sdm brown sugar, tuang dan campur semua bahan ke dalam mangkuk untuk membuat marinasi.",
-        image: "",
+        image: "/recipe-detail/bulgogi/steps/2.svg",
       },
     ],
   },
