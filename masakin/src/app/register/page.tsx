@@ -1,20 +1,20 @@
 "use client";
 
-import { useState } from "react";
-import { Formik, Form } from "formik";
-import * as Yup from "yup";
+import { Formik, Field, ErrorMessage } from "formik";
 import InputForm from "@/components/InputForm";
 import FormButton from "@/components/FormButton";
 import RedTitleForm from "@/components/RedTitleForm";
-import axios from "axios";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import axios from "axios";
+import * as Yup from "yup";
 
 const Register = () => {
   const initialValues = {
     username: "",
     firstname: "",
     lastname: "",
+    phone: "",
     email: "",
     password: "",
   };
@@ -23,34 +23,35 @@ const Register = () => {
     username: Yup.string().required("Username is required"),
     firstname: Yup.string().required("First name is required"),
     lastname: Yup.string().required("Last name is required"),
+    phone: Yup.string()
+    .matches(/^\+?[0-9]+$/, "Phone number is not valid")
+      .required("Phone is required"),
     email: Yup.string()
-      .email("Invalid email address")
+      .matches(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/, "Invalid email address")
       .required("Email is required"),
     password: Yup.string()
-      .required("Password is required")
-      .min(8, "Password must be at least 8 characters")
-      .matches(
-        /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/,
-        "Password must contain at least 8 characters, 1 uppercase letter, 1 lowercase letter, 1 number and 1 special character"
-      ),
+    .min(8, "Password must contain at least 8 characters")
+    .matches(/^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[!@#$%^&*(),.?":{}|<>])[a-zA-Z0-9!@#$%^&*(),.?":{}|<>]+$/, "Password must contain at least one letter, one number, and one special character")
+    .required("Password is required")
   });
-
-  const [error, setError] = useState<string | null>(null);
 
   const router = useRouter();
 
-  const handleSubmit = async (values: typeof initialValues) => {
+  const handleRegister = async (values: typeof initialValues) => {
     try {
-      const response = await axios.post("https://masakinprojectbe.vercel.app/user/register", values);
-
-      if (response.status === 200) {
-        router.push("/login")
-      } else {
-        setError(response.data.message || "Registration failed.");
+      const response = await axios.post(
+        "https://masakinprojectbe.vercel.app/user/register",
+        values
+      );
+      if (response.status === 201) {
+        router.push("/login");
       }
     } catch (error) {
-      console.error("Registration error:", error);
-      setError("An error occurred during registration.");
+      if (axios.isAxiosError(error) && error.response) {
+        console.error("Registration failed:", error.response.data);
+      } else {
+        console.error("An unexpected error occurred:", error);
+      }
     }
   };
 
@@ -68,29 +69,113 @@ const Register = () => {
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
-        onSubmit={handleSubmit}
+        onSubmit={handleRegister}
       >
-        <Form className="flex flex-col justify-center items-center gap-6 mt-[50px]">
-          <div className="flex flex-col gap-6">
-            <InputForm label="Username" type="text" placeholder="Username" />
-            <InputForm
-              label="First Name"
-              type="text"
-              placeholder="First Name"
-            />
-            <InputForm label="Last Name" type="text" placeholder="Last Name" />
-            <InputForm label="Email" type="email" placeholder="Email" />
-            <InputForm
-              label="Password"
-              type="password"
-              placeholder="Password"
-            />
-          </div>
+        {({ values, handleChange, handleSubmit }) => {
+          return (
+            <form
+              onSubmit={handleSubmit}
+              className="flex flex-col justify-center items-center gap-6 mt-[50px]"
+            >
+              <div className="flex flex-col gap-6">
+                <Field
+                  component={InputForm}
+                  id="username"
+                  name="username"
+                  label="Username"
+                  type="text"
+                  placeholder="Username"
+                  value={values.username}
+                  onChange={handleChange}
+                />
+                <ErrorMessage
+                  name="username"
+                  component="div"
+                  className="text-red-500 text-[14px] font-[500]"
+                />
+                <Field
+                  component={InputForm}
+                  id="firstname"
+                  name="firstname"
+                  label="First Name"
+                  type="text"
+                  placeholder="First Name"
+                  value={values.firstname}
+                  onChange={handleChange}
+                />
+                <ErrorMessage
+                  name="firstname"
+                  component="div"
+                  className="text-red-500 text-[14px] font-[500]"
+                />
+                <Field
+                  component={InputForm}
+                  id="lastname"
+                  name="lastname"
+                  label="Last Name"
+                  type="text"
+                  placeholder="Last Name"
+                  value={values.lastname}
+                  onChange={handleChange}
+                />
+                <ErrorMessage
+                  name="lastname"
+                  component="div"
+                  className="text-red-500 text-[14px] font-[500]"
+                />
+                <Field
+                  component={InputForm}
+                  id="phone"
+                  name="phone"
+                  label="Phone"
+                  type="text"
+                  placeholder="Phone"
+                  value={values.phone}
+                  onChange={handleChange}
+                />
+                <ErrorMessage
+                  name="phone"
+                  component="div"
+                  className="text-red-500 text-[14px] font-[500]"
+                />
+                <Field
+                  component={InputForm}
+                  id="email"
+                  name="email"
+                  label="Email"
+                  type="email"
+                  placeholder="Email"
+                  value={values.email}
+                  onChange={handleChange}
+                />
+                <ErrorMessage
+                  name="email"
+                  component="div"
+                  className="text-red-500 text-[14px] font-[500]"
+                />
+                <Field
+                  component={InputForm}
+                  id="password"
+                  name="password"
+                  label="Password"
+                  type="password"
+                  placeholder="Password"
+                  value={values.password}
+                  onChange={handleChange}
+                />
+                <ErrorMessage
+                  name="password"
+                  component="div"
+                  className="text-red-500 text-[14px] font-[500]"
+                />
+              </div>
 
-          <div>
-            <FormButton text="Register" type="submit"/>
-          </div>
-        </Form>
+              <div>
+                <FormButton text="Register" type="submit" />
+              </div>
+            </form>
+          );
+        }}
       </Formik>
 
       <div className="flex justify-center items-center gap-2 mt-[20px]">
