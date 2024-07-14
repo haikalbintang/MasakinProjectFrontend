@@ -20,6 +20,7 @@ const Home = () => {
             alt="Splash-bg"
             width={226.69}
             height={168.47}
+            priority
           />
         </div>
 
@@ -38,7 +39,7 @@ const Home = () => {
         </div>
 
         <div className="mt-[20px] z-10">
-          <FormButton text="Sign In" onClick={() => router.push('/login')} />
+          <FormButton text="Sign In" onClick={() => router.push('/login')} type="button" />
         </div>
       </div>
     </>
