@@ -51,8 +51,6 @@ const LoginPage = () => {
         <form onSubmit={handleLogin}>
           <div className="flex flex-col gap-6 items-center mt-[50px]">
             <InputForm
-              id="email"
-              name="email"
               label="Email"
               type="email"
               placeholder="Email"
@@ -63,8 +61,6 @@ const LoginPage = () => {
             />
             <div className="flex flex-col gap-4">
               <InputForm
-                id="password"
-                name="password"
                 label="Password"
                 type="password"
                 placeholder="Password"
