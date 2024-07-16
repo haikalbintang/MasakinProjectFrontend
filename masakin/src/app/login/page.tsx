@@ -73,7 +73,9 @@ const LoginPage = () => {
                   setLoginData({ ...loginData, password: e.target.value })
                 }
               />
-              <RedTitleForm title="Forgot password?" />
+              <Link href="/resetpassword">
+                <RedTitleForm title="Forgot password?" />
+              </Link>
             </div>
 
             <div className="flex flex-col gap-6 items-center">
@@ -95,7 +97,7 @@ const LoginPage = () => {
         <div className="flex justify-center items-center gap-2">
           <p className="text-[14px] font-[500]">Don't have an account?</p>
           <Link href="/register">
-            <RedTitleForm title="Register" />
+            <RedTitleForm title="Register"/>
           </Link>
         </div>
       </div>
