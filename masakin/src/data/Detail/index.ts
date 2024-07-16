@@ -13,6 +13,7 @@ export const recipeDetailData: recipeDetailType[] = [
       "Dengan langkah-langkah yang sederhana, Bulgogi sangat mudah untuk dibuat.",
       "Hidangkan Bulgogi bersama nasi dan kimchi untuk sensasi makan yang benar-benar autentik.",
     ],
+    video: "",
     servings: 4,
     ingredients: [
       { number: "1/2 buah / 50 gram", name: "bawang bombay" },
@@ -21,10 +22,13 @@ export const recipeDetailData: recipeDetailType[] = [
     ],
     tools: ["mangkuk besar", "pisau dapur", "parutan"],
     instructions: [
-      { text: "Kumpulkan semua bahan.", image: "" },
+      {
+        text: "Kumpulkan semua bahan.",
+        image: "/recipe-detail/bulgogi/steps/1.svg",
+      },
       {
         text: "Cincang halus 8 siung bawang putih, Siapkan 60 ml Korean soy sauce, 30 ml minyak wijen panggang, 3 sdm brown sugar, tuang dan campur semua bahan ke dalam mangkuk untuk membuat marinasi.",
-        image: "",
+        image: "/recipe-detail/bulgogi/steps/2.svg",
       },
     ],
   },
@@ -36,6 +40,7 @@ export const recipeDetailData: recipeDetailType[] = [
     time: 30,
     difficulty: 4,
     description: ["???", "???", "???"],
+    video: "",
     servings: 4,
     ingredients: [
       { number: "???", name: "???" },
@@ -59,6 +64,7 @@ export const recipeDetailData: recipeDetailType[] = [
     time: 30,
     difficulty: 4,
     description: ["???", "???", "???"],
+    video: "",
     servings: 4,
     ingredients: [
       { number: "???", name: "???" },
@@ -82,6 +88,7 @@ export const recipeDetailData: recipeDetailType[] = [
     time: 30,
     difficulty: 4,
     description: ["???", "???", "???"],
+    video: "",
     servings: 4,
     ingredients: [
       { number: "???", name: "???" },
@@ -105,6 +112,7 @@ export const recipeDetailData: recipeDetailType[] = [
     time: 30,
     difficulty: 4,
     description: ["???", "???", "???"],
+    video: "",
     servings: 4,
     ingredients: [
       { number: "???", name: "???" },
@@ -128,6 +136,7 @@ export const recipeDetailData: recipeDetailType[] = [
     time: 30,
     difficulty: 4,
     description: ["???", "???", "???"],
+    video: "",
     servings: 4,
     ingredients: [
       { number: "???", name: "???" },
@@ -151,6 +160,7 @@ export const recipeDetailData: recipeDetailType[] = [
     time: 30,
     difficulty: 4,
     description: ["???", "???", "???"],
+    video: "",
     servings: 4,
     ingredients: [
       { number: "???", name: "???" },

@@ -6,6 +6,7 @@ export interface recipeDetailType {
   time: number;
   difficulty: number;
   description: string[];
+  video: string;
   servings: number;
   ingredients: {
     number: string;

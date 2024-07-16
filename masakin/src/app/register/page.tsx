@@ -24,15 +24,21 @@ const Register = () => {
     firstname: Yup.string().required("First name is required"),
     lastname: Yup.string().required("Last name is required"),
     phone: Yup.string()
-    .matches(/^\+?[0-9]+$/, "Phone number is not valid")
+      .matches(/^\+?[0-9]+$/, "Phone number is not valid")
       .required("Phone is required"),
     email: Yup.string()
-      .matches(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/, "Invalid email address")
+      .matches(
+        /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+        "Invalid email address"
+      )
       .required("Email is required"),
     password: Yup.string()
-    .min(8, "Password must contain at least 8 characters")
-    .matches(/^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[!@#$%^&*(),.?":{}|<>])[a-zA-Z0-9!@#$%^&*(),.?":{}|<>]+$/, "Password must contain at least one letter, one number, and one special character")
-    .required("Password is required")
+      .min(8, "Password must contain at least 8 characters")
+      .matches(
+        /^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[!@#$%^&*(),.?":{}|<>])[a-zA-Z0-9!@#$%^&*(),.?":{}|<>]+$/,
+        "Password must contain at least one letter, one number, and one special character"
+      )
+      .required("Password is required"),
   });
 
   const router = useRouter();
@@ -56,7 +62,7 @@ const Register = () => {
   };
 
   return (
-    <>
+    <main>
       <div className="flex flex-col">
         <div className="flex flex-col mt-[97px] ml-[] justify-center items-center">
           <div>
@@ -184,7 +190,7 @@ const Register = () => {
           <RedTitleForm title="Login" />
         </Link>
       </div>
-    </>
+    </main>
   );
 };
 

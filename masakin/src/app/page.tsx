@@ -1,15 +1,14 @@
-"use client"
+"use client";
 
 import FormButton from "@/components/FormButton";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
 const Home = () => {
-
   const router = useRouter();
 
   return (
-    <>
+    <main>
       <div className="relative h-screen flex flex-col items-center gap-2">
         <div className="absolute inset-0 bg-[url('/assets/images/Splash-bg.png')] bg-no-repeat bg-cover">
           <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
@@ -39,10 +38,14 @@ const Home = () => {
         </div>
 
         <div className="mt-[20px] z-10">
-          <FormButton text="Sign In" onClick={() => router.push('/login')} type="button" />
+          <FormButton
+            text="Sign In"
+            onClick={() => router.push("/login")}
+            type="button"
+          />
         </div>
       </div>
-    </>
+    </main>
   );
 };
 
