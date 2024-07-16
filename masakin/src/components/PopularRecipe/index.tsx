@@ -1,10 +1,10 @@
 import BigCard from "@/components/RecipeCard/bigCard";
-import { recipeDetailData } from "@/data/Detail";
+import { recipeDetailData } from "@/data/Mock";
 import { recipeDetailType } from "@/data/Type";
 
 const PopularRecipe = () => {
   return (
-    <div className="pl-[32px]">
+    <div className="pl-[32px] pb-[81px]">
       <h2 className="text-[16px] font-[600] text-black mb-[8px]">
         Resep Populer
       </h2>

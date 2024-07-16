@@ -18,8 +18,8 @@ export default async function RecipeDetailPage({ params }: any) {
   console.log(recipe);
   return (
     <>
-      <h1>TEST</h1>
-      <p>{params.id}</p>
+      <h1 className="text-white">TEST</h1>
+      <p className="text-white">{params.id}</p>
     </>
   );
 }

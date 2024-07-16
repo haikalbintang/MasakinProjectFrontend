@@ -1,6 +1,5 @@
 "use client";
 
-import { recipeDetailData } from "@/data/Detail";
 import { recipeDetailType } from "@/data/Type";
 import Image from "next/image";
 
@@ -10,7 +9,7 @@ interface RecipeDetailProps {
 
 const SmallCard: React.FC<RecipeDetailProps> = ({ recipe }) => {
   return (
-    <div className="min-w-[106px] h-[141px] pt-[8px] rounded-[10px] bg-grey-100 flex flex-col items-center">
+    <div onClick={() => window.location.href = `/recipe/${recipe.id}`} className="min-w-[106px] h-[141px] pt-[8px] rounded-[10px] bg-grey-100 flex flex-col items-center">
       <Image
         width={100}
         height={100}
@@ -21,16 +20,16 @@ const SmallCard: React.FC<RecipeDetailProps> = ({ recipe }) => {
           borderRadius: "10px",
           marginBottom: "7px"
         }}
-        src={recipe.image}
-        alt={recipe.title}
+        src={recipe.food_image}
+        alt={recipe.food_name}
       />
       <p className="text-[11px] font-[400] text-grey-600 text-center leading-[13.31px]">
-        {recipe.title}
+        {recipe.food_name}
       </p>
       <div className="relative w-full h-full mb-[5px]">
         <div className="absolute w-full inset-x-0 bottom-0 px-[5px] space-y-[10px]">
           <div className="flex flex-row justify-center">
-            {[...Array(recipeDetailData[0].rating)].map((_, index) => (
+            {[...Array(recipe.rating)].map((_, index) => (
               <Image
                 key={index}
                 src="/starGreen.svg"
@@ -56,7 +55,7 @@ const SmallCard: React.FC<RecipeDetailProps> = ({ recipe }) => {
                   height: "8px",
                 }}
               />
-              <p className="text-green-400 text-[8px]">{recipe.time} menit</p>
+              <p className="text-green-400 text-[8px]">{recipe.cooking_time} menit</p>
             </div>
             <Image
               src="/bookmark.svg"

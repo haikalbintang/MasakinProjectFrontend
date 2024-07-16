@@ -67,11 +67,11 @@ export default function Ingredients({ recipeDetailData }: IngredientsProps) {
           Masakan
         </p>
         <p className="w-1/3 text-right bg-red-700 text-xs text-slate-400">
-          {recipeDetailData.ingredients.length} bahan
+          {recipeDetailData.ingredient_info.length} bahan
         </p>
       </div>
       <ul className="flex flex-col w-full">
-        {recipeDetailData.ingredients.map((ingredient, index) => (
+        {recipeDetailData.ingredient_info.map((ingredient, index) => (
           <li
             key={index}
             className="my-1 flex w-full justify-between items-center text-sm bg-stone-200 rounded-lg font-semibold py-2 px-3"
