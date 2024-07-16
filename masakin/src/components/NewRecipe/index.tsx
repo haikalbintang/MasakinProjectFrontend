@@ -8,7 +8,7 @@ const NewRecipe = () => {
       <h2 className="text-[16px] font-[600] text-black mb-[15px]">
         Resep Baru
       </h2>
-      <div className="flex w-auto flex-row space-x-[7px] overflow-x-auto no-scrollbar">
+      <div className="flex w-auto flex-row space-x-[7px] overflow-x-auto">
         {recipeDetailData.map((recipe: recipeDetailType) => (
           <SmallCard key={recipe.id} recipe={recipe} />
         ))}
