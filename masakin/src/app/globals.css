@@ -34,3 +34,7 @@ main {
 .bg-red {
   background-color: rgba(223, 27, 79, 1);
 }
+
+.delete-this {
+  color: gray;
+}
