@@ -7,7 +7,7 @@ const SearchResult = () => {
   let querystring = window.location.search.substring(7);
 
   const searchResult = recipeDetailData.filter((recipe: recipeDetailType) =>
-    recipe.title.toLowerCase().includes(querystring.toLowerCase())
+    recipe.food_name.toLowerCase().includes(querystring.toLowerCase())
   )
 
   return (

@@ -6,22 +6,17 @@ import { recipeDetailType } from "@/data/Type";
 import { fetchRecipeList } from "@/data/api/authApi";
 import React, { useEffect, useState } from "react";
 
+
+
 const NewRecipe: React.FC = () => {
-  const [recipeList, setRecipeList] = useState<recipeDetailType[]>([]);
-
+  const [result, setResult] = useState<recipeDetailType[]>([])
   useEffect(() => {
-    async function fetchRecipes() {
-      try {
-        const recipes = await fetchRecipeList();
-        recipes.sort((a, b) => a.id - b.id);
-        setRecipeList(recipes)
-      } catch (error) {
-        console.error(error)
-      }
-    };
-
-    fetchRecipes();
-  }, []);
+    async function fetchData() {
+      const recipes = await fetchRecipeList();
+      setResult(recipes);
+    }
+    fetchData();
+  }, [])
 
   return (
     <div className="w-full mb-[52px] pl-[32px]">
@@ -29,7 +24,7 @@ const NewRecipe: React.FC = () => {
         Resep Baru
       </h2>
       <div className="flex w-auto flex-row space-x-[7px] overflow-x-auto no-scrollbar">
-        {recipeList.map((recipe: recipeDetailType) => (
+        {result.map((recipe: recipeDetailType) => (
           <SmallCard key={recipe.id} recipe={recipe} />
         ))}
       </div>

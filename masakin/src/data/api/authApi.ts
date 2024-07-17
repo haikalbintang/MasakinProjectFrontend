@@ -3,13 +3,14 @@ import { recipeDetailType } from "@/data/Type"
 
 const API_BASE_URL = "https://masakinprojectbe.vercel.app";
 
-export async function fetchRecipeList(): Promise<recipeDetailType[]> {
+export async function fetchRecipeList() {
   try {
-    const response = await axios.get(`${API_BASE_URL}/recipe/all`);
-    return response.data.recipes;
-  } catch (error) {
-    console.error("Error fetching recipes:", error);
-    return [];
+    const res = await axios.get(`${API_BASE_URL}/recipe/all`)
+    console.log(res.data)
+    return res.data
+  } catch (err) {
+    console.log(err)
+    return []
   }
 }
 
