@@ -29,7 +29,7 @@ const SmallCard: React.FC<RecipeDetailProps> = ({ recipe }) => {
       <div className="relative w-full h-full mb-[5px]">
         <div className="absolute w-full inset-x-0 bottom-0 px-[5px] space-y-[10px]">
           <div className="flex flex-row justify-center">
-            {[...Array(recipe.rating)].map((_, index) => (
+            {[...Array(Math.ceil(recipe.rating))].map((_, index) => (
               <Image
                 key={index}
                 src="/starGreen.svg"

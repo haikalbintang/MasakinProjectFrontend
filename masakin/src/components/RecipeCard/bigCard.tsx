@@ -21,7 +21,7 @@ const BigCard: React.FC<RecipeDetailProps> = ({ recipe }) => {
         <div className="absolute w-full inset-x-0 bottom-0">
           <p className="text-[14px] font-[600] text-white leading-[13.31px] mb-[5px]">{recipe.food_name}</p>
           <div className="flex flex-row mb-[5px]">
-            {[...Array(recipe.rating)].map((_, index) => (
+            {[...Array(Math.ceil(recipe.rating))].map((_, index) => (
               <Image
                 key={index}
                 src="/starGold.svg"
