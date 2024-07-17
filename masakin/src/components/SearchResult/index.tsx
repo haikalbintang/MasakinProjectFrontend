@@ -1,5 +1,5 @@
 "use client"
-import { recipeDetailData } from "@/data/Detail";
+import { recipeDetailData } from "@/data/Mock";
 import { recipeDetailType } from "@/data/Type";
 import BigCard from "@/components/RecipeCard/bigCard";
 

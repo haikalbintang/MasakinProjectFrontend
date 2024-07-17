@@ -8,15 +8,17 @@ interface RatingProps {
 export default function Rating({ recipeDetailData }: RatingProps) {
   return (
     <div className="flex">
-      {[...Array(Math.ceil(recipeDetailData.rating))].map((_, index) => (
-        <Image
-          key={index}
-          src="/recipe-detail/starGold.svg"
-          alt="Star rating"
-          width={15}
-          height={14}
-        />
-      ))}
+      {[...Array(Math.ceil(Number(recipeDetailData.rating)))].map(
+        (_, index) => (
+          <Image
+            key={index}
+            src="/recipe-detail/starGold.svg"
+            alt="Star rating"
+            width={15}
+            height={14}
+          />
+        )
+      )}
     </div>
   );
 }
