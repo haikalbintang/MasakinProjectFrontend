@@ -1,9 +1,9 @@
-import { recipeDetailType } from "@/data/Type";
+import { recipeDetailTypeOld } from "@/data/Type";
 import Image from "next/image";
 import Instruction from "./Instruction";
 
 interface InstructionsListProps {
-  recipeDetailData: recipeDetailType;
+  recipeDetailData: recipeDetailTypeOld;
 }
 
 export default function InstructionsList({

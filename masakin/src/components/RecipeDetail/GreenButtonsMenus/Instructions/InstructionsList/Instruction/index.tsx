@@ -1,10 +1,10 @@
-import { recipeDetailType } from "@/data/Type";
+import { recipeDetailTypeOld } from "@/data/Type";
 import Image from "next/image";
 
 interface InstructionProps {
   instruction: { text: string; image: string };
   index: number;
-  recipeDetailData: recipeDetailType;
+  recipeDetailData: recipeDetailTypeOld;
 }
 
 export default function Instruction({

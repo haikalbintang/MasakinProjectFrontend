@@ -1,11 +1,11 @@
-import { recipeDetailType } from "@/data/Type";
+import { recipeDetailTypeOld } from "@/data/Type";
 import Servings from "../../components/Servings";
 import TextBlack from "../../components/TextBlack";
 import Total from "../../components/Total";
 import ToolsList from "./ToolsList";
 
 interface ToolsProps {
-  recipeDetailData: recipeDetailType;
+  recipeDetailData: recipeDetailTypeOld;
 }
 
 export default function Tools({ recipeDetailData }: ToolsProps) {

@@ -1,6 +1,6 @@
-import { recipeDetailType } from "@/data/Type";
+import { recipeDetailTypeOld } from "@/data/Type";
 
-export const recipeDetailData: recipeDetailType[] = [
+export const recipeDetailData: recipeDetailTypeOld[] = [
   {
     id: 1,
     title: "Bulgogi",
@@ -49,10 +49,10 @@ export const recipeDetailData: recipeDetailType[] = [
     ],
     tools: ["???", "???", "???"],
     instructions: [
-      { text: "???", image: "???" },
+      { text: "???", image: "" },
       {
         text: "???",
-        image: "???",
+        image: "",
       },
     ],
   },
@@ -73,10 +73,10 @@ export const recipeDetailData: recipeDetailType[] = [
     ],
     tools: ["???", "???", "???"],
     instructions: [
-      { text: "???", image: "???" },
+      { text: "???", image: "" },
       {
         text: "???",
-        image: "???",
+        image: "",
       },
     ],
   },
@@ -97,10 +97,10 @@ export const recipeDetailData: recipeDetailType[] = [
     ],
     tools: ["???", "???", "???"],
     instructions: [
-      { text: "???", image: "???" },
+      { text: "???", image: "" },
       {
         text: "???",
-        image: "???",
+        image: "",
       },
     ],
   },
@@ -121,10 +121,10 @@ export const recipeDetailData: recipeDetailType[] = [
     ],
     tools: ["???", "???", "???"],
     instructions: [
-      { text: "???", image: "???" },
+      { text: "???", image: "" },
       {
         text: "???",
-        image: "???",
+        image: "",
       },
     ],
   },
@@ -145,10 +145,10 @@ export const recipeDetailData: recipeDetailType[] = [
     ],
     tools: ["???", "???", "???"],
     instructions: [
-      { text: "???", image: "???" },
+      { text: "???", image: "" },
       {
         text: "???",
-        image: "???",
+        image: "",
       },
     ],
   },
@@ -169,10 +169,10 @@ export const recipeDetailData: recipeDetailType[] = [
     ],
     tools: ["???", "???", "???"],
     instructions: [
-      { text: "???", image: "???" },
+      { text: "???", image: "" },
       {
         text: "???",
-        image: "???",
+        image: "",
       },
     ],
   },

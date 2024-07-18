@@ -1,8 +1,8 @@
-import { recipeDetailType } from "@/data/Type";
+import { recipeDetailTypeOld } from "@/data/Type";
 import Image from "next/image";
 
 interface DifficultyProps {
-  recipeDetailData: recipeDetailType;
+  recipeDetailData: recipeDetailTypeOld;
 }
 
 export default function Difficulty({ recipeDetailData }: DifficultyProps) {

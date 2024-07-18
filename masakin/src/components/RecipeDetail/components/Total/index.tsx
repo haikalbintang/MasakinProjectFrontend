@@ -1,8 +1,8 @@
-import { recipeDetailType } from "@/data/Type";
+import { recipeDetailTypeOld } from "@/data/Type";
 
 interface TotalProps {
   text: string;
-  recipeDetailData: recipeDetailType;
+  recipeDetailData: recipeDetailTypeOld;
   menu: "ingredients" | "tools" | "instructions";
 }
 
