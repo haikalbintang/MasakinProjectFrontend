@@ -1,8 +1,8 @@
 import React from "react";
 
 interface InputFormProps {
-  id: string;
-  name: string;
+  id?: string;
+  name?: string;
   label: string;
   type: string;
   placeholder: string;
