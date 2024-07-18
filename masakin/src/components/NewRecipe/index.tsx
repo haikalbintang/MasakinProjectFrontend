@@ -3,7 +3,7 @@
 import SmallCard from "@/components/RecipeCard/smallCard";
 import { recipeDetailData } from "@/data/Mock";
 import { recipeDetailType } from "@/data/Type";
-import { fetchRecipeList } from "@/data/api/authApi";
+import { fetchRecipeList } from "@/data/api";
 import React, { useEffect, useState } from "react";
 
 

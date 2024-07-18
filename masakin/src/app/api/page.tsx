@@ -17,12 +17,12 @@ async function fetchRecipeList() {
     //     })
 
     try {
-        const res = await axios.get(`${API_BASE_URL}/recipe/all`)
+        const res = await axios.get(`${API_BASE_URL}/user/profile`)
         console.log(res.data)
         return res.data
-    } catch(err) {
+    } catch (err) {
         console.log(err)
-        return[]
+        return []
     }
 }
 

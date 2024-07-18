@@ -24,3 +24,8 @@ export interface recipeDetailType {
   utensil_info: string | null,
   writen_by: number,
 }
+
+export interface UserProfile {
+  id: number;
+  username: string;
+}
