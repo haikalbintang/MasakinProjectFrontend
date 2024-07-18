@@ -3,7 +3,7 @@ import NewRecipe from "@/components/NewRecipe";
 import Search from "@/components/SearchBar";
 import Navbar from "@/components/Navbar";
 
-export default function homePage() {
+export default function HomePage() {
   return (
     <>
       <main className="flex flex-col pt-[65px] items-center">
