@@ -4,6 +4,7 @@ interface FormButtonProps {
     text: string;
     type: "button" | "submit";
     onClick?: () => void;
+    disabled?: boolean;
 }
 
 const FormButton = ({text, onClick, type}: FormButtonProps) => {
