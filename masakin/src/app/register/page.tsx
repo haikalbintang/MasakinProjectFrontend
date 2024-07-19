@@ -70,7 +70,7 @@ const Register = () => {
   };
 
   return (
-    <main>
+    <main className="pb-[100px]">
       <div className="flex flex-col">
         <div className="flex flex-col mt-[97px] ml-[] justify-center items-center">
           <div>
