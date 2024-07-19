@@ -12,6 +12,9 @@ const ResetPasswordPage = () => {
     newPassword: "",
   });
 
+  const [showPopup, setShowPopup] = useState(false);
+  const [popupMessage, setPopupMessage] = useState("");
+
   const router = useRouter();
   const baseUrl = "https://masakinprojectbe.vercel.app";
 
@@ -24,17 +27,40 @@ const ResetPasswordPage = () => {
       });
       console.log("response", response.data);
       if (response.data.success) {
-        router.push("/login");
+        setPopupMessage("Password reset successful. Redirecting to login...");
+        setShowPopup(true);
+        setTimeout(() => {
+          router.push("/login");
+        }, 2000);
       } else {
-        console.error("Error: ", response.data.message);
+        setPopupMessage(response.data.message);
+        setShowPopup(true);
       }
     } catch (error) {
+      setPopupMessage("An error occurred. Please try again.");
+      setShowPopup(true);
       console.error(error);
     }
   };
 
   return (
-    <>
+    <main>
+      {showPopup && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+          <div className="bg-white p-4 rounded shadow-lg">
+            <h2 className="text-xl font-bold">Notification</h2>
+            <div className="flex flex-col gap-4">
+              <p>{popupMessage}</p>
+              <button
+                className="mt-4 px-4 py-2 bg-red-500 text-white rounded"
+                onClick={() => setShowPopup(false)}
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
       <div className="flex flex-col mt-[97px] ml-[] justify-center items-center">
         <div className="">
           <h1 className="text-[33px] font-[700]">Reset Password</h1>
@@ -68,7 +94,7 @@ const ResetPasswordPage = () => {
           </div>
         </form>
       </div>
-    </>
+    </main>
   );
 };
 

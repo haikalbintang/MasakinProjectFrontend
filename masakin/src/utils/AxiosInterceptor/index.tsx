@@ -1,9 +1,6 @@
 import axios from "axios";
-import { useRouter } from "next/router";
 
-export const setupInterceptors = (store: any) => {
-  const router = useRouter();
-
+export const setupInterceptors = (store: any, router: any) => {
   axios.interceptors.request.use(
     (config) => {
       const token = localStorage.getItem("access_token");
