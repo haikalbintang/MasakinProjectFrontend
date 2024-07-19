@@ -91,7 +91,7 @@ const LoginPage = () => {
         </div>
 
         <div className="flex justify-center items-center gap-2">
-          <p className="text-[14px] font-[500]">Don&apos;t have an account?</p>
+          <p className="text-[11px] font-[500]">Don't have an account?</p>
           <Link href="/register">
             <RedTitleForm title="Register"/>
           </Link>
