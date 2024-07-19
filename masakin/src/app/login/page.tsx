@@ -5,9 +5,10 @@ import FormButton from "@/components/FormButton";
 import RedTitleForm from "@/components/RedTitleForm";
 import SocialIcon from "@/components/SocialIcon";
 import axios from "axios";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { setupInterceptors } from "@/utils/AxiosInterceptor";
 
 const LoginPage = () => {
   const [loginData, setLoginData] = useState({
@@ -15,9 +16,17 @@ const LoginPage = () => {
     password: "",
   });
 
+  const [showPopup, setShowPopup] = useState(false); // State untuk mengontrol tampilan popup
+  const [popupMessage, setPopupMessage] = useState(""); // State untuk pesan popup
+
   const router = useRouter();
 
   const baseUrl = "https://masakinprojectbe.vercel.app";
+
+  // Setup interceptors
+  useEffect(() => {
+    setupInterceptors({ setShowPopup, setPopupMessage });
+  }, []);
 
   const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -41,6 +50,22 @@ const LoginPage = () => {
 
   return (
     <main>
+      {showPopup && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+          <div className="bg-white p-4 rounded shadow-lg">
+            <h2 className="text-xl font-bold">Error</h2>
+            <div className="flex flex-col gap-4">
+              <p>{popupMessage}</p>
+              <button
+              className="mt-4 px-4 py-2 bg-red-500 text-white rounded"
+              onClick={() => setShowPopup(false)}
+              >
+              Tutup
+            </button>
+              </div>
+          </div>
+        </div>
+      )}
       <div className="flex flex-col mt-[97px] ml-[] justify-center items-center">
         <div className="">
           <h1 className="text-[33px] font-[700]">Welcome,</h1>

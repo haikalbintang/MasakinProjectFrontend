@@ -8,6 +8,8 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import axios from "axios";
 import * as Yup from "yup";
+import { useState, useEffect } from "react";
+import { setupInterceptors } from "@/utils/AxiosInterceptor";
 
 const Register = () => {
   const initialValues = {
@@ -41,7 +43,13 @@ const Register = () => {
       .required("Password is required"),
   });
 
+  const [showPopup, setShowPopup] = useState(false);
+  const [popupMessage, setPopupMessage] = useState("");
   const router = useRouter();
+
+  useEffect(() => {
+    setupInterceptors({ setShowPopup, setPopupMessage });
+  }, []);
 
   const handleRegister = async (values: typeof initialValues) => {
     try {
