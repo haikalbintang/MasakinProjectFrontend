@@ -25,8 +25,8 @@ const LoginPage = () => {
 
   // Setup interceptors
   useEffect(() => {
-    setupInterceptors({ setShowPopup, setPopupMessage });
-  }, []);
+    setupInterceptors({ setShowPopup, setPopupMessage }, router);
+  }, [router]);
 
   const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();

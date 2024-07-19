@@ -48,8 +48,8 @@ const Register = () => {
   const router = useRouter();
 
   useEffect(() => {
-    setupInterceptors({ setShowPopup, setPopupMessage });
-  }, []);
+    setupInterceptors({ setShowPopup, setPopupMessage }, router);
+  }, [router]);
 
   const handleRegister = async (values: typeof initialValues) => {
     try {
