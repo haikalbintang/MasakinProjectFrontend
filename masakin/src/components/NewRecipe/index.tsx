@@ -3,25 +3,44 @@
 import SmallCard from "@/components/RecipeCard/smallCard";
 import { recipeDetailData } from "@/data/Mock";
 import { recipeDetailType } from "@/data/Type";
-import { fetchRecipeList } from "@/data/api/authApi";
+import { fetchRecipeByUpdate } from "@/data/api";
 import React, { useEffect, useState } from "react";
 
-const NewRecipe: React.FC = () => {
-  const [recipeList, setRecipeList] = useState<recipeDetailType[]>([]);
+interface NewRecipeProps {
+  filter: string;
+}
+
+const NewRecipe: React.FC<NewRecipeProps> = ({ filter }) => {
+  const [recipes, setRecipes] = useState<recipeDetailType[]>([]);
+  const [filteredRecipes, setFilteredRecipes] = useState<recipeDetailType[]>(
+    []
+  );
+
+  async function fetchData() {
+    try {
+      const token = localStorage.getItem("token");
+      if (token) {
+        const data = await fetchRecipeByUpdate(token);
+        setRecipes(data);
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  }
 
   useEffect(() => {
-    async function fetchRecipes() {
-      try {
-        const recipes = await fetchRecipeList();
-        recipes.sort((a, b) => a.id - b.id);
-        setRecipeList(recipes);
-      } catch (error) {
-        console.error(error);
-      }
-    }
-
-    fetchRecipes();
+    fetchData();
   }, []);
+
+  const filtered = recipes.filter(
+    (recipe) =>
+      filter === "" ||
+      recipe.country_name.toLowerCase().includes(filter.toLowerCase())
+  );
+
+  useEffect(() => {
+    setFilteredRecipes(filtered);
+  }, [filter, recipes]);
 
   return (
     <div className="w-full mb-[52px] pl-[32px]">
@@ -29,7 +48,7 @@ const NewRecipe: React.FC = () => {
         Resep Baru
       </h2>
       <div className="flex w-auto flex-row space-x-[7px] overflow-x-auto no-scrollbar">
-        {recipeList.map((recipe: recipeDetailType) => (
+        {filteredRecipes.map((recipe: recipeDetailType) => (
           <SmallCard key={recipe.id} recipe={recipe} />
         ))}
       </div>

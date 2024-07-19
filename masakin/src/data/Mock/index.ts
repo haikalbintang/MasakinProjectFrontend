@@ -5,14 +5,7 @@ export const recipeDetailData: recipeDetailType[] = [
     cooking_time: 45,
     cooking_video: "https://youtu.be/8yhEWHCQHcE?si=1HSUzZ2JO6mTZNVp",
     country_id: 2,
-    country_info: [
-      {
-        code: "TH(+66)",
-        country_name: "Thailand",
-        created_at: "Sat, 13 Jul 2024 06:41:22 GMT",
-        id: 2
-      }
-    ],
+    country_name: "Thailand",
     created_at: "2024-07-13T23:49:35.877356+00:00",
     dificulty_level: 2,
     food_image: "https://ipeoxqzngqxbmdybxfoy.supabase.co/storage/v1/object/public/foodpicture/pad_thai.png",
@@ -39,14 +32,7 @@ export const recipeDetailData: recipeDetailType[] = [
     cooking_time: 50,
     cooking_video: "???",
     country_id: 3,
-    country_info: [
-      {
-        code: "KOR(+82)",
-        country_name: "Korea Selatan",
-        created_at: "Sat, 13 Jul 2024 23:31:02 GMT",
-        id: 3
-      }
-    ],
+    country_name: "Korea Selatan",
     created_at: "???",
     dificulty_level: 3,
     food_image: "/food_Bulgogi.jpg",
@@ -70,14 +56,7 @@ export const recipeDetailData: recipeDetailType[] = [
     cooking_time: 50,
     cooking_video: "???",
     country_id: 1,
-    country_info: [
-      {
-        code: "IDN(+62)",
-        country_name: "Indonesia",
-        created_at: "Sat, 13 Jul 2024 00:40:27 GMT",
-        id: 1
-      }
-    ],
+    country_name: "Indonesia",
     created_at: "???",
     dificulty_level: 3,
     food_image: "/food_SotoAyamLamongan.svg",
@@ -101,14 +80,7 @@ export const recipeDetailData: recipeDetailType[] = [
     cooking_time: 50,
     cooking_video: "???",
     country_id: 3,
-    country_info: [
-      {
-        code: "KOR(+82)",
-        country_name: "Korea Selatan",
-        created_at: "Sat, 13 Jul 2024 23:31:02 GMT",
-        id: 3
-      }
-    ],
+    country_name: "Korea Selatan",
     created_at: "???",
     dificulty_level: 3,
     food_image: "/food_Jajangmyeon.svg",
@@ -132,14 +104,7 @@ export const recipeDetailData: recipeDetailType[] = [
     cooking_time: 50,
     cooking_video: "???",
     country_id: 3,
-    country_info: [
-      {
-        code: "KOR(+82)",
-        country_name: "Korea Selatan",
-        created_at: "Sat, 13 Jul 2024 23:31:02 GMT",
-        id: 3
-      }
-    ],
+    country_name: "Korea Selatan",
     created_at: "???",
     dificulty_level: 3,
     food_image: "/food_Kimbab.svg",
@@ -163,14 +128,7 @@ export const recipeDetailData: recipeDetailType[] = [
     cooking_time: 50,
     cooking_video: "???",
     country_id: 3,
-    country_info: [
-      {
-        code: "KOR(+82)",
-        country_name: "Korea Selatan",
-        created_at: "Sat, 13 Jul 2024 23:31:02 GMT",
-        id: 3
-      }
-    ],
+    country_name: "Korea Selatan",
     created_at: "???",
     dificulty_level: 3,
     food_image: "/food_Bibimbab.svg",
@@ -194,14 +152,7 @@ export const recipeDetailData: recipeDetailType[] = [
     cooking_time: 50,
     cooking_video: "???",
     country_id: 3,
-    country_info: [
-      {
-        code: "KOR(+82)",
-        country_name: "Korea Selatan",
-        created_at: "Sat, 13 Jul 2024 23:31:02 GMT",
-        id: 3
-      }
-    ],
+    country_name: "Korea Selatan",
     created_at: "???",
     dificulty_level: 3,
     food_image: "/food_Tangsuyuk.svg",

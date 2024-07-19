@@ -23,12 +23,7 @@ export interface recipeDetailType {
   cooking_time: number;
   cooking_video: string;
   country_id: number;
-  country_info: {
-    code: string;
-    country_name: string;
-    created_at: string;
-    id: number;
-  }[];
+  country_name: string,
   created_at: string;
   dificulty_level: number;
   food_image: string;
@@ -43,4 +38,8 @@ export interface recipeDetailType {
   updated_at: string;
   utensil_info: string | null;
   writen_by: number;
+}
+
+export interface UserProfile {
+  firstname: string;
 }

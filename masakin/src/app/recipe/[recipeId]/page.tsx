@@ -6,20 +6,7 @@ interface RecipeDetailPageProps {
   params: { recipeId: string };
 }
 
-// async function getRecipeById(recipeId: string) {
-//   const response = await fetch(
-//     `https://masakinprojectbe.vercel.app/recipe/${recipeId}`,
-//     {
-//       method: "GET",
-//     }
-//   );
-
-//   return response.json();
-// }
-
 export default function RecipeDetailPage({ params }: RecipeDetailPageProps) {
-  // const response = getRecipeById(params.recipeId);
-  // console.log(response);
 
   return (
     <main>
