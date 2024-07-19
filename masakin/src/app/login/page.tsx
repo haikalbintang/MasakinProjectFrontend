@@ -16,22 +16,21 @@ const LoginPage = () => {
     password: "",
   });
 
-  const [showPopup, setShowPopup] = useState(false); // State untuk mengontrol tampilan popup
-  const [popupMessage, setPopupMessage] = useState(""); // State untuk pesan popup
-  const [isLoading, setIsLoading] = useState(false); // State untuk mengontrol loading
+  const [showPopup, setShowPopup] = useState(false);
+  const [popupMessage, setPopupMessage] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const router = useRouter();
 
   const baseUrl = "https://masakinprojectbe.vercel.app";
 
-  // Setup interceptors
   useEffect(() => {
     setupInterceptors({ setShowPopup, setPopupMessage }, router);
   }, [router]);
 
   const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setIsLoading(true); // Mulai loading
+    setIsLoading(true);
     try {
       const response = await axios.post(`${baseUrl}/user/login`, {
         email: loginData.email,
@@ -48,7 +47,7 @@ const LoginPage = () => {
     } catch (error) {
       console.error(error);
     } finally {
-      setIsLoading(false); // Selesai loading
+      setIsLoading(false);
     }
   };
 

@@ -47,7 +47,7 @@ export const setupInterceptors = (store: any, router: any) => {
             console.error("An error occurred, showing popup...");
             store.setPopupMessage("An error occurred. Please try again.");
         }
-        store.setShowPopup(true); // Show popup
+        store.setShowPopup(true);
       }
       return Promise.reject(error);
     }

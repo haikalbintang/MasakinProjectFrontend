@@ -64,7 +64,6 @@ const Register = () => {
       }
     } catch (error) {
       if (axios.isAxiosError(error) && error.response) {
-        console.error("Registration failed:", error.response.data);
       } else {
         console.error("An unexpected error occurred:", error);
       }
