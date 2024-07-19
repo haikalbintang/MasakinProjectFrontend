@@ -23,31 +23,31 @@ export const setupInterceptors = (store: any, router: any) => {
         switch (error.response.status) {
           case 400:
             console.error("Bad Request, showing popup...");
-            store.setPopupMessage("Permintaan tidak valid. Silakan periksa data yang Anda masukkan.");
+            store.setPopupMessage("Invalid request. Please check the data you entered.");
             break;
           case 401:
             console.error("Unauthorized, redirecting to login...");
-            store.setPopupMessage("Anda tidak memiliki akses. Silakan login kembali.");
+            store.setPopupMessage("You do not have access. Please log in again.");
             router.push("/login");
             break;
           case 403:
             console.error("Forbidden, redirecting to login...");
-            store.setPopupMessage("Anda tidak memiliki izin untuk mengakses sumber daya ini.");
+            store.setPopupMessage("You do not have permission to access this resource.");
             router.push("/login");
             break;
           case 404:
             console.error("Not Found, showing popup...");
-            store.setPopupMessage("Sumber daya yang Anda cari tidak ditemukan.");
+            store.setPopupMessage("The resource you are looking for was not found.");
             break;
           case 500:
             console.error("Internal Server Error, showing popup...");
-            store.setPopupMessage("Terjadi kesalahan pada server. Silakan coba lagi nanti.");
+            store.setPopupMessage("An error occurred on the server. Please try again later.");
             break;
           default:
             console.error("An error occurred, showing popup...");
-            store.setPopupMessage("Terjadi kesalahan. Silakan coba lagi.");
+            store.setPopupMessage("An error occurred. Please try again.");
         }
-        store.setShowPopup(true); // Tampilkan popup
+        store.setShowPopup(true); // Show popup
       }
       return Promise.reject(error);
     }
