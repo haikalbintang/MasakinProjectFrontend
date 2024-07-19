@@ -45,6 +45,7 @@ const Register = () => {
 
   const [showPopup, setShowPopup] = useState(false);
   const [popupMessage, setPopupMessage] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
 
   useEffect(() => {
@@ -52,6 +53,7 @@ const Register = () => {
   }, [router]);
 
   const handleRegister = async (values: typeof initialValues) => {
+    setIsLoading(true);
     try {
       const response = await axios.post(
         "https://masakinprojectbe.vercel.app/user/register",
@@ -66,6 +68,8 @@ const Register = () => {
       } else {
         console.error("An unexpected error occurred:", error);
       }
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -197,7 +201,7 @@ const Register = () => {
               </div>
 
               <div>
-                <FormButton text="Register" type="submit" />
+                <FormButton text={isLoading ? "Loading..." : "Register"} type="submit" disabled={isLoading} />
               </div>
             </form>
           );

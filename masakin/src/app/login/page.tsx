@@ -18,6 +18,7 @@ const LoginPage = () => {
 
   const [showPopup, setShowPopup] = useState(false); // State untuk mengontrol tampilan popup
   const [popupMessage, setPopupMessage] = useState(""); // State untuk pesan popup
+  const [isLoading, setIsLoading] = useState(false); // State untuk mengontrol loading
 
   const router = useRouter();
 
@@ -30,6 +31,7 @@ const LoginPage = () => {
 
   const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setIsLoading(true); // Mulai loading
     try {
       const response = await axios.post(`${baseUrl}/user/login`, {
         email: loginData.email,
@@ -45,6 +47,8 @@ const LoginPage = () => {
       }
     } catch (error) {
       console.error(error);
+    } finally {
+      setIsLoading(false); // Selesai loading
     }
   };
 
@@ -100,7 +104,7 @@ const LoginPage = () => {
             </div>
 
             <div className="flex flex-col gap-6 items-center">
-              <FormButton text="Login" type="submit" />
+              <FormButton text={isLoading ? "Loading..." : "Login"} type="submit" disabled={isLoading} />
               <div className="flex items-center w-full">
                 <hr className="flex-grow border-t border-gray-300" />
                 <RedTitleForm title="Or Sign in With" />
