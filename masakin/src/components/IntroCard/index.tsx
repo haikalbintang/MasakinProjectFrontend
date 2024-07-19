@@ -10,11 +10,10 @@ const IntroCard = () => {
   useEffect(() => {
     const fetchProfile = async () => {
       try {
-        const token = localStorage.getItem("token");
+        const token = localStorage.getItem("access_token");
         if (token) {
           const res = await fetchUser(token);
           setProfile(res.my_profile);
-          console.log(res);
         }
       } catch (error) {
         console.error("Fetch categories failed", error);

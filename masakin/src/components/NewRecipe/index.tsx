@@ -18,7 +18,7 @@ const NewRecipe: React.FC<NewRecipeProps> = ({ filter }) => {
 
   async function fetchData() {
     try {
-      const token = localStorage.getItem("token");
+      const token = localStorage.getItem("access_token");
       if (token) {
         const data = await fetchRecipeByUpdate(token);
         setRecipes(data);

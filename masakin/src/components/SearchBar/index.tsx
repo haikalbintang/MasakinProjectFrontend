@@ -8,6 +8,7 @@ interface SearchBarProps {
   fetchData: Function;
   shown: boolean;
   loading: boolean;
+  setFilter: (filter: string) => void;
 }
 
 const SearchBar: React.FC<SearchBarProps> = ({
@@ -16,9 +17,8 @@ const SearchBar: React.FC<SearchBarProps> = ({
   fetchData,
   shown,
   loading,
+  setFilter,
 }) => {
-  const router = useRouter();
-
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearch(e.target.value);
   };
@@ -31,6 +31,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
   function handleReset() {
     setSearch("");
     fetchData("");
+    setFilter("");
   }
 
   return (

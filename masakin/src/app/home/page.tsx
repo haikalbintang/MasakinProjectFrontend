@@ -21,7 +21,7 @@ export default function homePage() {
   async function fetchData() {
     try {
       setLoading(true);
-      const token = localStorage.getItem("token");
+      const token = localStorage.getItem("access_token");
       if (token) {
         const data = await fetchRecipeByUpdate(token);
         setData(data);
@@ -49,7 +49,7 @@ export default function homePage() {
 
   return (
     <>
-      <main className="flex flex-col pt-[65px] items-center">
+      <main className="flex flex-col pt-[61px] items-center">
         <IntroCard />
         <Search
           shown={shown}
@@ -57,6 +57,7 @@ export default function homePage() {
           setSearch={setSearch}
           fetchData={handleSearch}
           loading={loading}
+          setFilter={setFilterCountry}
         />
         {shown ? (
           <SearchResult filteredData={filteredData} />

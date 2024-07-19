@@ -19,7 +19,7 @@ const FilterCountry: React.FC<FilterProps> = ({ setFilter }) => {
 
   const fetchData = async (country: string) => {
     try {
-      const token = localStorage.getItem("token");
+      const token = localStorage.getItem("access_token");
       if (token) {
         setFilter(country);
         setActiveTab(country);
