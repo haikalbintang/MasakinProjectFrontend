@@ -92,96 +92,108 @@ const Register = () => {
               className="flex flex-col justify-center items-center gap-6 mt-[50px]"
             >
               <div className="flex flex-col gap-6">
-                <Field
-                  component={InputForm}
-                  id="username"
-                  name="username"
-                  label="Username"
-                  type="text"
-                  placeholder="Username"
-                  value={values.username}
-                  onChange={handleChange}
-                />
-                <ErrorMessage
-                  name="username"
-                  component="div"
-                  className="text-red-500 text-[14px] font-[500]"
-                />
-                <Field
-                  component={InputForm}
-                  id="firstname"
-                  name="firstname"
-                  label="First Name"
-                  type="text"
-                  placeholder="First Name"
-                  value={values.firstname}
-                  onChange={handleChange}
-                />
-                <ErrorMessage
-                  name="firstname"
-                  component="div"
-                  className="text-red-500 text-[14px] font-[500]"
-                />
-                <Field
-                  component={InputForm}
-                  id="lastname"
-                  name="lastname"
-                  label="Last Name"
-                  type="text"
-                  placeholder="Last Name"
-                  value={values.lastname}
-                  onChange={handleChange}
-                />
-                <ErrorMessage
-                  name="lastname"
-                  component="div"
-                  className="text-red-500 text-[14px] font-[500]"
-                />
-                <Field
-                  component={InputForm}
-                  id="phone"
-                  name="phone"
-                  label="Phone"
-                  type="text"
-                  placeholder="Phone"
-                  value={values.phone}
-                  onChange={handleChange}
-                />
-                <ErrorMessage
-                  name="phone"
-                  component="div"
-                  className="text-red-500 text-[14px] font-[500]"
-                />
-                <Field
-                  component={InputForm}
-                  id="email"
-                  name="email"
-                  label="Email"
-                  type="email"
-                  placeholder="Email"
-                  value={values.email}
-                  onChange={handleChange}
-                />
-                <ErrorMessage
-                  name="email"
-                  component="div"
-                  className="text-red-500 text-[14px] font-[500]"
-                />
-                <Field
-                  component={InputForm}
-                  id="password"
-                  name="password"
-                  label="Password"
-                  type="password"
-                  placeholder="Password"
-                  value={values.password}
-                  onChange={handleChange}
-                />
-                <ErrorMessage
-                  name="password"
-                  component="div"
-                  className="text-red-500 text-[14px] font-[500]"
-                />
+                <div>
+                  <Field
+                    component={InputForm}
+                    id="username"
+                    name="username"
+                    label="Username"
+                    type="text"
+                    placeholder="Username"
+                    value={values.username}
+                    onChange={handleChange}
+                  />
+                  <ErrorMessage
+                    name="username"
+                    component="div"
+                    className="text-red-500 text-[14px] font-[500] h-[20px] w-full"
+                  />
+                </div>
+                <div>
+                  <Field
+                    component={InputForm}
+                    id="firstname"
+                    name="firstname"
+                    label="First Name"
+                    type="text"
+                    placeholder="First Name"
+                    value={values.firstname}
+                    onChange={handleChange}
+                  />
+                  <ErrorMessage
+                    name="firstname"
+                    component="div"
+                    className="text-red-500 text-[14px] font-[500] h-[20px] w-full"
+                  />
+                </div>
+                <div>
+                  <Field
+                    component={InputForm}
+                    id="lastname"
+                    name="lastname"
+                    label="Last Name"
+                    type="text"
+                    placeholder="Last Name"
+                    value={values.lastname}
+                    onChange={handleChange}
+                  />
+                  <ErrorMessage
+                    name="lastname"
+                    component="div"
+                    className="text-red-500 text-[14px] font-[500] h-[20px] w-full"
+                  />
+                </div>
+                <div>
+                  <Field
+                    component={InputForm}
+                    id="phone"
+                    name="phone"
+                    label="Phone"
+                    type="text"
+                    placeholder="Phone"
+                    value={values.phone}
+                    onChange={handleChange}
+                  />
+                  <ErrorMessage
+                    name="phone"
+                    component="div"
+                    className="text-red-500 text-[14px] font-[500] h-[20px] w-full"
+                  />
+                </div>
+                <div>
+                  <Field
+                    component={InputForm}
+                    id="email"
+                    name="email"
+                    label="Email"
+                    type="email"
+                    placeholder="Email"
+                    value={values.email}
+                    onChange={handleChange}
+                  />
+                  <ErrorMessage
+                    name="email"
+                    component="div"
+                    className="text-red-500 text-[14px] font-[500] h-[20px] w-full"
+                  />
+                </div>
+                <div>
+                  <Field
+                    component={InputForm}
+                    id="password"
+                    name="password"
+                    label="Password"
+                    type="password"
+                    placeholder="Password"
+                    value={values.password}
+                    onChange={handleChange}
+                  />
+                  <ErrorMessage
+                    name="password"
+                    component="div"
+                    className="text-red-500 text-[14px] font-[500] h-[20px] w-full"
+                  />
+                </div>
               </div>
 
               <div>
