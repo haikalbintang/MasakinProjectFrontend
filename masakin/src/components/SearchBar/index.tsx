@@ -1,14 +1,23 @@
-"use client"
+"use client";
 import Image from "next/image";
-import Link from 'next/link';
-import { useRouter } from 'next/navigation';
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 interface SearchBarProps {
   search: string;
   setSearch: (value: string) => void;
+  fetchData: Function;
+  shown: boolean;
+  loading: boolean;
 }
 
-const SearchBar: React.FC<SearchBarProps> = ({ search, setSearch }) => {
+const SearchBar: React.FC<SearchBarProps> = ({
+  search,
+  setSearch,
+  fetchData,
+  shown,
+  loading,
+}) => {
   const router = useRouter();
 
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -17,7 +26,12 @@ const SearchBar: React.FC<SearchBarProps> = ({ search, setSearch }) => {
 
   function handleSearch(e: React.FormEvent) {
     e.preventDefault();
-    router.push(`/search?query=${search}`);
+    fetchData(search);
+  }
+
+  function handleReset() {
+    setSearch("");
+    fetchData("");
   }
 
   return (
@@ -31,20 +45,34 @@ const SearchBar: React.FC<SearchBarProps> = ({ search, setSearch }) => {
             width: "18px",
             height: "18px",
           }}
-          alt="" />
+          alt=""
+        />
         <input
           type="text"
           id="searchInput"
           placeholder="Search recipe"
           value={search}
           onChange={handleSearchChange}
-          className="w-full h-[35px] pl-[10px] rounded-[10px] text-[11px] font-[400] placeholder:text-neutral-300 focus:outline-none " />
+          className="w-full h-[35px] pl-[10px] rounded-[10px] text-[11px] font-[400] placeholder:text-neutral-300 focus:outline-none "
+        />
+        {shown && (
+          <button
+            onClick={handleReset}
+            className="h-[30px] w-[30px] rounded-full text-[15px] font-[400] m-[7px] text-neutral-500"
+          >
+            x
+          </button>
+        )}
       </div>
-      <Link href={`/search?query=${search}`}>
-        <button onClick={handleSearch} className="searchButton w-[65px] h-[40px] px-4 rounded-[10px] bg-red text-[15px] font-[400] text-white">Cari</button>
-      </Link>
+      <button
+        onClick={handleSearch}
+        disabled={loading}
+        className="searchButton w-[65px] h-[40px] px-4 rounded-[10px] bg-red text-[15px] font-[400] text-white"
+      >
+        Cari
+      </button>
     </div>
   );
-}
+};
 
 export default SearchBar;

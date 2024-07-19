@@ -1,20 +1,46 @@
-"use client"
+"use client";
 
 import BigCard from "@/components/RecipeCard/bigCard";
 import { recipeDetailData } from "@/data/Mock";
 import { recipeDetailType } from "@/data/Type";
-import { fetchRecipeList } from "@/data/api";
+import { fetchRecipeByRating } from "@/data/api";
 import React, { useEffect, useState } from "react";
 
-const PopularRecipe = () => {
-  const [result, setResult] = useState<recipeDetailType[]>([])
-  useEffect(() => {
-    async function fetchData() {
-      const recipes = await fetchRecipeList();
-      setResult(recipes);
+interface PopularRecipeProps {
+  filter: string;
+}
+
+const PopularRecipe: React.FC<PopularRecipeProps> = ({ filter }) => {
+  const [recipes, setRecipes] = useState<recipeDetailType[]>([]);
+  const [filteredRecipes, setFilteredRecipes] = useState<recipeDetailType[]>(
+    []
+  );
+
+  async function fetchData() {
+    try {
+      const token = localStorage.getItem("token");
+      if (token) {
+        const data = await fetchRecipeByRating(token);
+        setRecipes(data);
+      }
+    } catch (err) {
+      console.log(err);
     }
+  }
+
+  useEffect(() => {
     fetchData();
-  }, [])
+  }, []);
+
+  const filtered = recipes.filter(
+    (recipe) =>
+      filter === "" ||
+      recipe.country_name.toLowerCase().includes(filter.toLowerCase())
+  );
+
+  useEffect(() => {
+    setFilteredRecipes(filtered);
+  }, [filter, recipes]);
 
   return (
     <div className="w-full pl-[32px] pb-[81px]">
@@ -22,7 +48,7 @@ const PopularRecipe = () => {
         Resep Populer
       </h2>
       <div className="flex flex-wrap">
-        {result.map((recipe: recipeDetailType) => (
+        {filteredRecipes.map((recipe: recipeDetailType) => (
           <BigCard key={recipe.id} recipe={recipe} />
         ))}
       </div>

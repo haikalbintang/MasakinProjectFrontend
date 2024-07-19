@@ -2,6 +2,7 @@ export interface recipeDetailType {
   cooking_time: number,
   cooking_video: string,
   country_id: number,
+  country_name: string,
   country_info:
   {
     code: string,
@@ -25,7 +26,7 @@ export interface recipeDetailType {
   writen_by: number,
 }
 
-export interface UserProfile {
+export interface userDetailType {
   id: number;
-  username: string;
+  firstname: string;
 }
