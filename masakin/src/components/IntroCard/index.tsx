@@ -2,10 +2,10 @@
 
 import React, { useEffect, useState } from "react";
 import { fetchUser } from "@/data/api";
-import { UserProfile } from "@/data/Type";
+import { userDetailType } from "@/data/Type";
 
 const IntroCard = () => {
-  const [profile, setProfile] = useState<UserProfile | undefined>(undefined);
+  const [profile, setProfile] = useState<userDetailType | undefined>(undefined);
 
   useEffect(() => {
     const fetchProfile = async () => {

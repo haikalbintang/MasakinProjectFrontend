@@ -40,6 +40,7 @@ export interface recipeDetailType {
   writen_by: number;
 }
 
-export interface UserProfile {
+export interface userDetailType {
+  id: number;
   firstname: string;
 }
