@@ -62,9 +62,12 @@ const ResetPasswordPage = () => {
         </div>
       )}
       <div className="flex flex-col mt-[97px] ml-[] justify-center items-center">
-        <div className="">
+        <div className="flex flex-col gap-4 justify-center items-center">
           <h1 className="text-[33px] font-[700]">Reset Password</h1>
-          <h6 className="text-[19px] font-[500]">Enter your email and new password to reset your password</h6>
+          <div className="flex flex-col">
+            <h6 className="text-[15px] font-[500]">Enter your email and new password</h6>
+            <h6 className="text-[15px] font-[500]">to reset your password</h6>
+          </div>
         </div>
       </div>
       <div>
