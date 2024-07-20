@@ -7,10 +7,10 @@ import Bookmark from "@/components/RecipeDetail/Bookmark";
 import Descriptions from "@/components/RecipeDetail/Descriptions";
 import PinkButton from "@/components/RecipeDetail/PinkButton";
 import GreenButtonsMenus from "@/components/RecipeDetail/GreenButtonsMenus";
-import { recipeDetailTypeOld } from "@/data/Type";
+import { recipeInfo } from "@/data/Type";
 
 interface RecipeDetailProps {
-  recipeDetailData: recipeDetailTypeOld;
+  recipeDetailData: recipeInfo;
 }
 
 export default function RecipeDetail({ recipeDetailData }: RecipeDetailProps) {

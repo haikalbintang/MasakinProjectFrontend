@@ -1,9 +1,9 @@
-import { recipeDetailTypeOld } from "@/data/Type";
+import { recipeInfo } from "@/data/Type";
 import Image from "next/image";
 import Instruction from "./Instruction";
 
 interface InstructionsListProps {
-  recipeDetailData: recipeDetailTypeOld;
+  recipeDetailData: recipeInfo;
 }
 
 export default function InstructionsList({
@@ -16,7 +16,7 @@ export default function InstructionsList({
           key={index}
           className="items-start gap-1 my-1 flex w-full text-sm bg-[#ECEAFE] rounded-lg font-medium py-2 px-3"
         >
-          <p className="items-start w-3">{index + 1}. </p>
+          {/* <p className="items-start w-3">{index + 1}. </p> */}
           <Instruction
             instruction={instruction}
             index={index}

@@ -1,9 +1,9 @@
-import { recipeDetailTypeOld } from "@/data/Type";
+import { recipeInfo } from "@/data/Type";
 
 interface TotalProps {
   text: string;
-  recipeDetailData: recipeDetailTypeOld;
-  menu: "ingredients" | "tools" | "instructions";
+  recipeDetailData: recipeInfo;
+  menu: "ingredient_info" | "utensil_info" | "instructions";
 }
 
 export default function Total({ text, recipeDetailData, menu }: TotalProps) {

@@ -1,7 +1,7 @@
-import { recipeDetailTypeOld } from "@/data/Type";
+import { recipeInfo } from "@/data/Type";
 
 interface IngredientsListProps {
-  recipeDetailData: recipeDetailTypeOld;
+  recipeDetailData: recipeInfo;
 }
 
 export default function IngredientsList({
@@ -9,13 +9,13 @@ export default function IngredientsList({
 }: IngredientsListProps) {
   return (
     <ul className="flex flex-col w-full">
-      {recipeDetailData.ingredients.map((ingredient, index) => (
+      {recipeDetailData.ingredient_info.map((ingredient, index) => (
         <li
           key={index}
           className="my-1 flex w-full justify-between items-center text-sm bg-[#ECEAFE] rounded-lg font-semibold py-2 px-3"
         >
-          <p>{ingredient.number}</p>
-          <p>{ingredient.name}</p>
+          <p>{ingredient.dose}</p>
+          <p>{ingredient.ingredient_name}</p>
         </li>
       ))}
     </ul>
