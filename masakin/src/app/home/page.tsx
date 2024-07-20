@@ -10,7 +10,7 @@ import Navbar from "@/components/Navbar";
 import IntroCard from "@/components/IntroCard";
 import FilterCountry from "@/components/FilterCountry";
 
-export default function homePage() {
+export default function HomePage() {
   const [search, setSearch] = useState<string>("");
   const [filteredData, setFilteredData] = useState<recipeDetailType[]>([]);
   const [data, setData] = useState<recipeDetailType[]>([]);
