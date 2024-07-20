@@ -6,7 +6,7 @@ import Image from "next/image";
 export default function BackArrow() {
   const router = useRouter();
   return (
-    <div className="fixed left-7 top-4 cursor-pointer z-50">
+    <div className="absolute left-7 top-4 cursor-pointer z-50">
       <Image
         src="/recipe-detail/backArrow.svg"
         alt="Back arrow"

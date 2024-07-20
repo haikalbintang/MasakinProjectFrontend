@@ -1,8 +1,8 @@
-import { recipeDetailTypeOld } from "@/data/Type";
+import { recipeInfo } from "@/data/Type";
 import Image from "next/image";
 
 interface ServingsProps {
-  recipeDetailData: recipeDetailTypeOld;
+  recipeDetailData: recipeInfo;
 }
 
 export default function Servings({ recipeDetailData }: ServingsProps) {
@@ -16,7 +16,7 @@ export default function Servings({ recipeDetailData }: ServingsProps) {
           height={18}
         />
         <p className="text-[#A9A9A9] text-sm">
-          {recipeDetailData.servings} Porsi
+          {recipeDetailData.serving}3 Porsi
         </p>
       </div>
     </div>

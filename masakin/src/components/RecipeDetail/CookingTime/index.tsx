@@ -1,8 +1,8 @@
-import { recipeDetailTypeOld } from "@/data/Type";
+import { recipeInfo } from "@/data/Type";
 import Image from "next/image";
 
 interface CookingTimeProps {
-  recipeDetailData: recipeDetailTypeOld;
+  recipeDetailData: recipeInfo;
 }
 
 export default function CookingTime({ recipeDetailData }: CookingTimeProps) {
@@ -14,7 +14,7 @@ export default function CookingTime({ recipeDetailData }: CookingTimeProps) {
         width={23}
         height={23}
       />
-      <p className="text-[#A9A9A9]">{recipeDetailData.time} menit</p>
+      <p className="text-[#A9A9A9]">{recipeDetailData.cooking_time} menit</p>
     </div>
   );
 }

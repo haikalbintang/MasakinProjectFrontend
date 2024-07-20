@@ -1,21 +1,22 @@
 import RecipeDetail from "@/components/RecipeDetail";
 import BackArrow from "@/components/RecipeDetail/BackArrow";
-import { recipeDetailData } from "@/data/Detail";
 
 interface RecipeDetailPageProps {
   params: { recipeId: string };
 }
 
-export default function RecipeDetailPage({ params }: RecipeDetailPageProps) {
+export default async function RecipeDetailPage({
+  params,
+}: RecipeDetailPageProps) {
+  const response = await fetch(
+    `https://masakinprojectbe.vercel.app/recipe/${params.recipeId}`
+  );
+  const recipe = await response.json();
 
   return (
-    <main>
+    <main className="relative">
       <BackArrow />
-      <RecipeDetail
-        recipeDetailData={recipeDetailData[Number(params.recipeId)]}
-      />
-      <p className="text-blue-700">{params.recipeId}</p>
-      <p>ini paragraf</p>
+      <RecipeDetail recipeDetailData={recipe} />
     </main>
   );
 }

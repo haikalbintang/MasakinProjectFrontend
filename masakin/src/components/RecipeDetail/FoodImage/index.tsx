@@ -1,8 +1,8 @@
-import { recipeDetailTypeOld } from "@/data/Type";
+import { recipeInfo } from "@/data/Type";
 import Image from "next/image";
 
 interface FoodImageProps {
-  recipeDetailData: recipeDetailTypeOld;
+  recipeDetailData: recipeInfo;
 }
 
 export default function FoodImage({ recipeDetailData }: FoodImageProps) {
@@ -10,8 +10,8 @@ export default function FoodImage({ recipeDetailData }: FoodImageProps) {
     <div className="w-full h-36 relative rounded-xl">
       <Image
         className="rounded-xl"
-        src={recipeDetailData.image}
-        alt={recipeDetailData.title}
+        src={recipeDetailData.food_image}
+        alt={recipeDetailData.food_name}
         layout="fill"
         objectFit="cover"
       />

@@ -1,11 +1,11 @@
-import { recipeDetailTypeOld } from "@/data/Type";
+import { recipeInfo } from "@/data/Type";
 import Servings from "../../components/Servings";
 import TextBlack from "../../components/TextBlack";
 import Total from "../../components/Total";
 import ToolsList from "./ToolsList";
 
 interface ToolsProps {
-  recipeDetailData: recipeDetailTypeOld;
+  recipeDetailData: recipeInfo;
 }
 
 export default function Tools({ recipeDetailData }: ToolsProps) {
@@ -15,7 +15,7 @@ export default function Tools({ recipeDetailData }: ToolsProps) {
         <Servings recipeDetailData={recipeDetailData} />
         <TextBlack text={"Alat-alat"} />
         <Total
-          menu={"tools"}
+          menu={"utensil_info"}
           text={"Alat"}
           recipeDetailData={recipeDetailData}
         />

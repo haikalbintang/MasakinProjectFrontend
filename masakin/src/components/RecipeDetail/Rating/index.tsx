@@ -1,8 +1,8 @@
-import { recipeDetailTypeOld } from "@/data/Type";
+import { recipeInfo } from "@/data/Type";
 import Image from "next/image";
 
 interface RatingProps {
-  recipeDetailData: recipeDetailTypeOld;
+  recipeDetailData: recipeInfo;
 }
 
 export default function Rating({ recipeDetailData }: RatingProps) {

@@ -1,11 +1,11 @@
-import { recipeDetailTypeOld } from "@/data/Type";
+import { recipeInfo } from "@/data/Type";
 import Servings from "../../components/Servings";
 import TextBlack from "../../components/TextBlack";
 import Total from "../../components/Total";
 import IngredientsList from "./IngredientsList";
 
 interface IngredientsProps {
-  recipeDetailData: recipeDetailTypeOld;
+  recipeDetailData: recipeInfo;
 }
 
 export default function Ingredients({ recipeDetailData }: IngredientsProps) {
@@ -15,7 +15,7 @@ export default function Ingredients({ recipeDetailData }: IngredientsProps) {
         <Servings recipeDetailData={recipeDetailData} />
         <TextBlack text={"Masakan"} />
         <Total
-          menu={"ingredients"}
+          menu={"ingredient_info"}
           text={"Bahan"}
           recipeDetailData={recipeDetailData}
         />

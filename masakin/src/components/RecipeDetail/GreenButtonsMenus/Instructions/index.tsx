@@ -1,11 +1,11 @@
-import { recipeDetailTypeOld } from "@/data/Type";
+import { recipeInfo } from "@/data/Type";
 import Servings from "../../components/Servings";
 import TextBlack from "../../components/TextBlack";
 import Total from "../../components/Total";
 import InstructionsList from "./InstructionsList";
 
 interface InstructionsProps {
-  recipeDetailData: recipeDetailTypeOld;
+  recipeDetailData: recipeInfo;
 }
 
 export default function Instructions({ recipeDetailData }: InstructionsProps) {
