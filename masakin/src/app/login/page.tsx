@@ -60,12 +60,12 @@ const LoginPage = () => {
             <div className="flex flex-col gap-4">
               <p>{popupMessage}</p>
               <button
-              className="mt-4 px-4 py-2 bg-red-500 text-white rounded"
-              onClick={() => setShowPopup(false)}
+                className="mt-4 px-4 py-2 bg-red-500 text-white rounded"
+                onClick={() => setShowPopup(false)}
               >
-              Tutup
-            </button>
-              </div>
+                Tutup
+              </button>
+            </div>
           </div>
         </div>
       )}
@@ -103,7 +103,11 @@ const LoginPage = () => {
             </div>
 
             <div className="flex flex-col gap-6 items-center">
-              <FormButton text={isLoading ? "Loading..." : "Login"} type="submit" disabled={isLoading} />
+              <FormButton
+                text={isLoading ? "Loading..." : "Login"}
+                type="submit"
+                disabled={isLoading}
+              />
               <div className="flex items-center w-full">
                 <hr className="flex-grow border-t border-gray-300" />
                 <RedTitleForm title="Or Sign in With" />
@@ -119,9 +123,9 @@ const LoginPage = () => {
         </div>
 
         <div className="flex justify-center items-center gap-2">
-          <p className="text-[11px] font-[500]">Don't have an account?</p>
+          <p className="text-[11px] font-[500]">{"Don't"} have an account?</p>
           <Link href="/register">
-            <RedTitleForm title="Register"/>
+            <RedTitleForm title="Register" />
           </Link>
         </div>
       </div>
